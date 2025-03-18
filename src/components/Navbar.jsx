@@ -92,7 +92,7 @@ const Navbar = () => {
             <Link
               to="/donate"
               className={`px-5 py-2 ${
-                isScrolled ? "bg-[#11698E]" : "bg-white text-[#11698E]"
+                isScrolled ? "bg-[#11c120]" : "bg-white text-[#11698E]"
               } rounded-lg font-bold hover:bg-[#0D5C75] hover:text-white transition duration-300`}
             >
               Donate

@@ -5,7 +5,7 @@ import {
   FaWhatsapp,
   FaLinkedin,
 } from "react-icons/fa";
-import Logo from "../assets/images/Wawu black.png";
+import Logo from "../assets/images/wawu white.png";
 import { FaX } from "react-icons/fa6";
 
 const Footer = () => {

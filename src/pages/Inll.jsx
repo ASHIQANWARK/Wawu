@@ -14,7 +14,7 @@ import {
   FaTeamspeak,
 } from "react-icons/fa";
 import bannerImage from "../assets/images/INLL Logo.png";
-import wawuLogo from "../assets/images/Wawu black.png";
+import wawuLogo from "../assets/images/wawu white.png";
 import whyINLLImage from "../assets/images/hero4.jpg";
 import highlightsImage from "../assets/images/hero5.jpg";
 import supportImage from "../assets/images/WAWU P3.jpg";
@@ -46,7 +46,7 @@ const INLLBrochure = () => {
                 />
               </div>
             </h3>
-            <p className="text-xs sm:text-sm md:text-base font-semibold text-white">
+            <p className="text-xs sm:text-sm md:text-base font-semibold text-GREEN">
               In association with Ofioh Sporty Private Limited
             </p>
           </div>

@@ -12,7 +12,7 @@ const team = [
   { name: "SHALEELA K", role: "TRUSTEE", image: shaleelaImage },
   { name:"SHARATH K", role:"FOUNDER", image:sharathImage },
   { name: "SHAFI SHOUKATH", role: "CO-FOUNDER", image: shafiImage },
-  { name: "SAINUL ABID K.A", role: "PROJECT MANAGER", image:abidImage },
+  { name: "SAINUL ABID K.A", role: "CEO", image:abidImage },
 ];
 
 const Team = () => {

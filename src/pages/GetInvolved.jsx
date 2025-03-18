@@ -29,7 +29,7 @@ const GetInvolved = () => {
             href="https://your-donation-link.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-[#07293d] text-white py-2 px-4 rounded-md hover:bg-[#11698E] transition relative z-10"
+            className="inline-block mt-4 bg-[#11c120] text-white py-2 px-4 rounded-md hover:bg-[#11698E] transition relative z-10"
           >
             Donate Now
           </a>
@@ -83,6 +83,28 @@ const GetInvolved = () => {
             className="inline-block mt-4 bg-[#07293d] text-white py-2 px-4 rounded-md hover:bg-[#11698E] transition relative z-10"
           >
             Volunteer Now
+          </a>
+        </div>
+        <div className="bg-white shadow-lg rounded-lg p-6 text-center relative">
+          <img
+            src={VolunteerImg}
+            alt="Volunteer"
+            className="absolute inset-0 w-full h-full object-cover opacity-10 rounded-lg"
+          />
+          <div className="relative z-10 flex justify-center">
+            <FaUserFriends className="text-[#07293d] text-5xl" />
+          </div>
+          <h3 className="text-xl font-semibold mt-4 relative z-10">Internship</h3>
+          <p className="text-[#11698E] mt-2 relative z-10">
+            Join our team 
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScjJek99jPOIEXAojcHGuAQYd-C8sEwenC2MgaGYhT-HxqGRA/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 bg-[#07293d] text-white py-2 px-4 rounded-md hover:bg-[#11698E] transition relative z-10"
+          >
+            Register Now
           </a>
         </div>
       </div>
