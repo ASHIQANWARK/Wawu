@@ -8,7 +8,7 @@ import sharathImage from "../assets/images/sharath.jpg";
 import shaleelaImage from "../assets/images/SHALEELA.jpg"
 
 const team = [
-  { name: "CK VINEETH", role: "Ambassador", image: ckImage },
+  { name: "CK VINEETH", role: "INLL AMBASSADOR (KERALA EDITION)", image: ckImage },
   { name: "SHALEELA K", role: "TRUSTEE", image: shaleelaImage },
   { name:"SHARATH K", role:"FOUNDER", image:sharathImage },
   { name: "SHAFI SHOUKATH", role: "CO-FOUNDER", image: shafiImage },

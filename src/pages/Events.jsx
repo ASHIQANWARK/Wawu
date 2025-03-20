@@ -54,7 +54,7 @@ const Events = () => {
           >
             <span className="text-4xl text-[#fa7e02] font-bold">❝</span>
             <strong className="text-[#ffffff]">
-              The hunt for India&apos;s next football sensation begins! WAVU
+              The hunt for India&apos;s next football sensation begins! WAWU
               Foundation brings you the ultimate scouting event where raw talent
               meets opportunity. This is your chance to train, compete, and get
               scouted by top football academies.

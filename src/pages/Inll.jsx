@@ -24,7 +24,7 @@ const INLLBrochure = () => {
   const googleFormLink = "https://forms.google.com"; // Replace with your actual Google Form link
 
   return (
-    <div className="font-sans text-black">
+    <div className=" text-black">
       {/* Hero Section */}
       <header className="relative bg-cover bg-[#07293d] bg-center h-auto flex flex-col items-center rounded-tr-full rounded-bl-full justify-between px-4 sm:px-8 py-8 sm:py-12 z-10">
         <div className="w-full max-w-screen-lg">
@@ -42,11 +42,11 @@ const INLLBrochure = () => {
                 <img
                   src={wawuLogo}
                   alt="WAWU Logo"
-                  className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto transform hover:scale-105 transition-transform duration-300"
+                  className="h-60 sm:h-24 md:h-28 lg:h-32 w-auto transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </h3>
-            <p className="text-xs sm:text-sm md:text-base font-semibold text-GREEN">
+            <p className="text-base sm:text-lg md:text-3xl font-semibold text-emerald-500">
               In association with Ofioh Sporty Private Limited
             </p>
           </div>
