@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../pages/Hero";
 import About from "../pages/About";
 import MissionVision from "../pages/Mission";
-import Testimonials from "../pages/Testimonials";
+
 import Team from "../pages/Team";
 import Events from "../pages/Events";
 import Chatbot from "../pages/Chatbot";
@@ -24,7 +24,7 @@ const Home = () => {
       <Impact />
       <GetInvolved />
       <Team />
-      <Testimonials />
+      
       <Chatbot />
     </div>
   );

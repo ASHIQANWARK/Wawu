@@ -1,28 +1,60 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div id="about" className="p-12 text-center bg-[#07293d] text-white rounded-b-full">
-      {/* Heading with better contrast and emphasis */}
-      <h1 className="text-4xl font-extrabold text-white uppercase tracking-wide">
+    <motion.div
+      id="about"
+      className="p-12 text-center bg-[#07293d] text-white rounded-b-full"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Heading */}
+      <motion.h1
+        className="text-4xl font-extrabold text-white uppercase tracking-wide"
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         About Us
-      </h1>
+      </motion.h1>
 
-      {/* More structured and engaging content */}
-      <div className="mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
+      {/* Content */}
+      <motion.div
+        className="mt-6 max-w-3xl mx-auto text-lg leading-relaxed"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <p className="text-gray-200">
           At <span className="font-semibold text-white">WAWU Foundation</span>, we are shaping the future of football by identifying and nurturing the next generation of stars. Our dedicated scouting team seeks out raw talent, providing young players with world-class training and life-changing opportunities.
         </p>
 
-        <p className="text-gray-200 mt-4">
+        <motion.p
+          className="text-gray-200 mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           But we go beyond training—we believe that financial barriers should never hold back a player’s dreams. Through sponsorships and fundraising, we ensure that every talented player gets the support they need to reach the global stage.
-        </p>
+        </motion.p>
 
-        <p className="text-gray-200 mt-4 font-semibold">
+        <motion.p
+          className="text-gray-200 mt-4 font-semibold"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           Join us in empowering future champions. Together, we can build a legacy of excellence.
-        </p>
-      </div>
-    </div>
+        </motion.p>
+      </motion.div>
+    </motion.div>
   );
 };
 
