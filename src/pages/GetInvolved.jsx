@@ -3,6 +3,7 @@ import { FaHandHoldingUsd, FaHandshake, FaUserFriends } from "react-icons/fa";
 import DonateImg from "../assets/images/Donate.jpg";
 import PartnerImg from "../assets/images/partnership.jpeg";
 import VolunteerImg from "../assets/images/Volunteer.jpg";
+import { Link } from "react-router-dom";
 
 const GetInvolved = () => {
   return (
@@ -25,14 +26,12 @@ const GetInvolved = () => {
           <p className="text-[#07293d] mt-2 relative z-10">
             Your contributions can change the lives of young footballers.
           </p>
-          <a
-            href="https://your-donation-link.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/donate"
             className="inline-block mt-4 bg-[#11c120] text-white py-2 px-4 rounded-md hover:bg-[#11698E] transition relative z-10"
           >
             Donate Now
-          </a>
+          </Link>
         </div>
 
         {/* Partner with Us Card */}
@@ -85,10 +84,12 @@ const GetInvolved = () => {
             Volunteer Now
           </a>
         </div>
+
+        {/* Internship Card */}
         <div className="bg-white shadow-lg rounded-lg p-6 text-center relative">
           <img
             src={VolunteerImg}
-            alt="Volunteer"
+            alt="Internship"
             className="absolute inset-0 w-full h-full object-cover opacity-10 rounded-lg"
           />
           <div className="relative z-10 flex justify-center">
@@ -96,7 +97,7 @@ const GetInvolved = () => {
           </div>
           <h3 className="text-xl font-semibold mt-4 relative z-10">Internship</h3>
           <p className="text-[#11698E] mt-2 relative z-10">
-            Join our team 
+            Join our team
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScjJek99jPOIEXAojcHGuAQYd-C8sEwenC2MgaGYhT-HxqGRA/viewform?usp=header"

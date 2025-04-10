@@ -10,6 +10,7 @@ import Team from './pages/Team';
 import Events from './pages/Events';
 import Inll from './pages/Inll';
 import Contacts from './pages/Contact';
+import Donate from './pages/Donate';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contacts />} />
+        <Route path="/donate" element={<Donate />} />
+
       </Routes>
       <Footer />
     </Router>

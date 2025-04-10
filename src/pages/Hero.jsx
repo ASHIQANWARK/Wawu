@@ -1,5 +1,6 @@
 import React from "react";
 import heroBg from "../assets/images/hero3.jpg"; // Import the image
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -33,9 +34,11 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
-          <button className="bg-[#11698E] hover:bg-[#0D5C75] text-black font-bold py-3 px-6 rounded-lg transition duration-300">
-            Donate Now
-          </button>
+          <Link to="/donate">
+            <button className="bg-[#11698E] hover:bg-[#0D5C75] text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+              Donate Now
+            </button>
+          </Link>
           <button className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-lg transition duration-300">
             Learn More
           </button>
