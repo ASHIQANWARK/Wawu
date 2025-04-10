@@ -8,10 +8,10 @@ import sharathImage from "../assets/images/sharath.jpg";
 import shaleelaImage from "../assets/images/SHALEELA.jpg"
 
 const team = [
-  { name: "CK VINEETH", role: "INLL AMBASSADOR (KERALA EDITION)", image: ckImage },
-  { name: "SHALEELA K", role: "TRUSTEE", image: shaleelaImage },
-  { name:"SHARATH K", role:"FOUNDER", image:sharathImage },
-  { name: "SHAFI SHOUKATH", role: "CO-FOUNDER", image: shafiImage },
+  { name: "CK VINEETH", role: "INLL Ambassador (KERALA EDITION)", image: ckImage },
+  { name: "SHALEELA K", role: "Trustee", image: shaleelaImage },
+  { name:"SHARATH K", role:"Founder", image:sharathImage },
+  { name: "SHAFI SHOUKATH", role: "Co-Founder", image: shafiImage },
   { name: "SAINUL ABID K.A", role: "CEO", image:abidImage },
 ];
 
@@ -43,8 +43,8 @@ const Team = () => {
               </div>
 
               {/* Member Info */}
-              <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-              <p className="text-gray-300">{member.role}</p>
+              <h3 className="text-xl font-semibold text-white text-center">{member.name}</h3>
+              <p className="text-gray-300 text-center">{member.role}</p>
 
               {/* Social Icons */}
               <div className="flex space-x-4 mt-4">
