@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // Replace BrowserRouter with HashRouter
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,6 +11,8 @@ import Events from './pages/Events';
 import Inll from './pages/Inll';
 import Contacts from './pages/Contact';
 import Donate from './pages/Donate';
+import OfficeEvents from './pages/officeevents';
+import InllEvents from './pages/inllgallery';
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/donate" element={<Donate />} />
-
+        <Route path="/officeevents" element={<OfficeEvents />} />
+        <Route path="/inllevents" element={<InllEvents />} />
       </Routes>
       <Footer />
     </Router>
