@@ -10,6 +10,7 @@ import Whyus from "../pages/Whyus";
 import Service from "../pages/Service";
 import Impact from "../pages/Impact";
 import GetInvolved from "./GetInvolved";
+import Gallery from "../pages/Gallery";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Service />
       <Impact />
       <GetInvolved />
+      <Gallery />
       <Team />
       
       <Chatbot />
