@@ -21,10 +21,33 @@ const cardVariant = {
 };
 
 const AboutSection = () => {
+  const cards = [
+    {
+      src: potentialimg,
+      title: "Unlocking Potential",
+      desc: "India’s youth possess raw talent and passion for football, but they lack structured pathways to pursue the sport professionally.",
+    },
+    {
+      src: teamimage,
+      title: "Bridging the Gap",
+      desc: "By providing access to professional coaching, financial support, and opportunities, WAWU fills the void in India’s football development ecosystem.",
+    },
+    {
+      src: team2img,
+      title: "Transforming Lives",
+      desc: "Football is more than just a sport; it teaches discipline, teamwork, leadership, and resilience.",
+    },
+    {
+      src: roleIMG,
+      title: "Creating Role Models",
+      desc: "We aim to develop football stars who inspire others and represent India on global platforms.",
+    },
+  ];
+
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-8 md:py-12 lg:py-16">
       <motion.div
-        className="container mx-auto text-center"
+        className="container mx-auto px-4 text-center"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -32,13 +55,14 @@ const AboutSection = () => {
       >
         {/* Heading */}
         <motion.h2
-          className="text-3xl font-bold text-gray-900"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900"
           variants={cardVariant}
         >
           Why <span className="text-[#07293d]">WAWU Foundation?</span>
         </motion.h2>
+
         <motion.p
-          className="mt-4 text-gray-600 max-w-2xl mx-auto"
+          className="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base"
           variants={cardVariant}
         >
           India’s youth possess raw talent and passion for football, but they
@@ -50,95 +74,27 @@ const AboutSection = () => {
 
         {/* Cards Section */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
           variants={container}
         >
-          {/* Card 1 */}
-          <motion.div
-            className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
-            variants={cardVariant}
-            whileHover={{ y: -8 }}
-          >
-            <img
-              src={potentialimg}
-              alt="Unlocking Potential"
-              className="w-full h-52 object-cover"
-            />
-            <div className="p-6 text-center">
-              <h3 className="font-bold text-lg text-white">
-                Unlocking Potential
-              </h3>
-              <p className="text-white text-sm mt-2">
-                India’s youth possess raw talent and passion for football, but
-                they lack structured pathways to pursue the sport professionally.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
-            variants={cardVariant}
-            whileHover={{ y: -8 }}
-          >
-            <img
-              src={teamimage}
-              alt="Bridging the Gap"
-              className="w-full h-52 object-cover"
-            />
-            <div className="p-6 text-center">
-              <h3 className="font-bold text-lg text-white">Bridging the Gap</h3>
-              <p className="text-white text-sm mt-2">
-                By providing access to professional coaching, financial support,
-                and opportunities, WAWU fills the void in India’s football
-                development ecosystem.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 3 */}
-          <motion.div
-            className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
-            variants={cardVariant}
-            whileHover={{ y: -8 }}
-          >
-            <img
-              src={team2img}
-              alt="Transforming Lives"
-              className="w-full h-52 object-cover"
-            />
-            <div className="p-6 text-center">
-              <h3 className="font-bold text-lg text-white">
-                Transforming Lives
-              </h3>
-              <p className="text-white text-sm mt-2">
-                Football is more than just a sport; it teaches discipline,
-                teamwork, leadership, and resilience.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 4 */}
-          <motion.div
-            className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
-            variants={cardVariant}
-            whileHover={{ y: -8 }}
-          >
-            <img
-              src={roleIMG}
-              alt="Creating Role Models"
-              className="w-full h-52 object-cover"
-            />
-            <div className="p-6 text-center">
-              <h3 className="font-bold text-lg text-white">
-                Creating Role Models
-              </h3>
-              <p className="text-white text-sm mt-2">
-                We aim to develop football stars who inspire others and
-                represent India on global platforms.
-              </p>
-            </div>
-          </motion.div>
+          {cards.map(({ src, title, desc }) => (
+            <motion.div
+              key={title}
+              className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
+              variants={cardVariant}
+              whileHover={{ y: -8 }}
+            >
+              <img
+                src={src}
+                alt={title}
+                className="w-full h-48 sm:h-52 md:h-56 lg:h-64 object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="font-bold text-lg text-white">{title}</h3>
+                <p className="text-white text-sm mt-2">{desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </section>
