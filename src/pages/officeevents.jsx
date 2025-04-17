@@ -33,7 +33,7 @@ const OfficeEvents = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex  items-center w-full">
       {/* Hero Section */}
       <div className="relative w-full h-96 flex items-center justify-center">
         <img

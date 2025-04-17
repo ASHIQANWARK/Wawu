@@ -35,7 +35,7 @@ const MissionVision = () => {
               Our Mission
             </h1>
             <p className="text-white text-lg leading-relaxed max-w-3xl mx-auto">
-              At <span className="font-semibold text-white">WAVU Foundation</span>, we believe talent knows no boundaries, but opportunities do. Our mission is to{" "}
+              At <span className="font-semibold text-white">WAWU Foundation</span>, we believe talent knows no boundaries, but opportunities do. Our mission is to{" "}
               <span className="font-extrabold">discover, nurture, and empower</span> young footballers through scholarships, world-class training, and global exposure. With strategic academy partnerships, we provide{" "}
               <span className="font-bold text-[#fff200]">tier coaching, mentorship, and career-building opportunities</span>. Together, we can{" "}
               <span className="font-extrabold">unlock potential and transform dreams into reality</span>.
@@ -77,7 +77,7 @@ const MissionVision = () => {
               <span className="font-extrabold text-[#fff200]">
                 elite training and mentorship
               </span>{" "}
-              and turn their passion into a professional career. WAVU Foundation
+              and turn their passion into a professional career. WAWU Foundation
               is dedicated to{" "}
               <span className="font-extrabold">breaking barriers</span> and
               creating pathways for future football stars. With the right
