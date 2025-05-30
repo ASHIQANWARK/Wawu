@@ -5,7 +5,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="p-12 text-center bg-[#07293d] text-white rounded-b-full"
+      className="px-4 sm:px-6 md:px-12 py-16 sm:py-20 bg-[#07293d] text-white text-center rounded-b-full"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -13,7 +13,7 @@ const About = () => {
     >
       {/* Heading */}
       <motion.h1
-        className="text-4xl font-extrabold text-white uppercase tracking-wide"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-wide mb-6"
         initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -24,18 +24,18 @@ const About = () => {
 
       {/* Content */}
       <motion.div
-        className="mt-6 max-w-3xl mx-auto text-lg leading-relaxed"
+        className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed text-gray-200"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <p className="text-gray-200">
+        <p>
           At <span className="font-semibold text-white">WAWU Foundation</span>, we are shaping the future of football by identifying and nurturing the next generation of stars. Our dedicated scouting team seeks out raw talent, providing young players with world-class training and life-changing opportunities.
         </p>
 
         <motion.p
-          className="text-gray-200 mt-4"
+          className="mt-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -45,7 +45,7 @@ const About = () => {
         </motion.p>
 
         <motion.p
-          className="text-gray-200 mt-4 font-semibold"
+          className="mt-6 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
