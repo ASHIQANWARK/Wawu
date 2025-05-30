@@ -33,7 +33,7 @@ const OfficeEvents = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="flex  items-center w-full">
+    <div className="w-full flex flex-col">
       {/* Hero Section */}
       <div className="relative w-full h-96 flex items-center justify-center">
         <img
@@ -48,19 +48,13 @@ const OfficeEvents = () => {
       </div>
 
       {/* Breadcrumb Section */}
-      <div className="w-full max-w-6xl px-6 py-4 text-sm text-white bg-[#07293d]">
-        <nav className="flex space-x-2" aria-label="Breadcrumb">
-          <span
-            className="hover:underline cursor-pointer"
-            onClick={() => navigate("/")}
-          >
+      <div className="w-full bg-[#07293d] px-6 py-4 text-sm text-white">
+        <nav className="flex flex-wrap items-center gap-2" aria-label="Breadcrumb">
+          <span className="hover:underline cursor-pointer" onClick={() => navigate("/")}>
             Home
           </span>
           <span>/</span>
-          <span
-            className="hover:underline cursor-pointer"
-            onClick={() => navigate("/")}
-          >
+          <span className="hover:underline cursor-pointer" onClick={() => navigate("/")}>
             Events
           </span>
           <span>/</span>
@@ -74,41 +68,41 @@ const OfficeEvents = () => {
           Gallery
         </h2>
 
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+              className="overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+              onClick={() => setSelectedImage(image.src)}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                onClick={() => setSelectedImage(image.src)}
+                className="w-full h-60 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}
         </div>
-
-        {/* Lightbox Modal */}
-        {selectedImage && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-            <div className="relative">
-              <button
-                className="absolute top-4 right-4 text-white text-3xl"
-                onClick={() => setSelectedImage(null)}
-              >
-                <FaTimes />
-              </button>
-              <img
-                src={selectedImage}
-                alt="Selected"
-                className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 p-4">
+          <div className="relative max-w-[90vw] max-h-[90vh]">
+            <button
+              className="absolute top-2 right-2 text-white text-3xl z-10"
+              onClick={() => setSelectedImage(null)}
+            >
+              <FaTimes />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="w-full h-full object-contain rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
