@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import impactBg from "../assets/images/impact.jpg";
+import impactBg from "../assets/images2/w91.jpg";
 
 // Animation Variants
 const container = {

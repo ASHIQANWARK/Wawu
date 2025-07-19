@@ -79,18 +79,7 @@ const Events = () => {
             <span className="text-4xl text-[#fa7e02] font-bold">❞</span>
           </motion.p>
 
-          {/* Details */}
-          <motion.div className="space-y-3 font-sans-serif" variants={fadeUp}>
-            <p className="text-lg font-extrabold text-white">
-              📍 <span className="text-[#fa7e02]">Locations:</span> Kerala
-            </p>
-            <p className="text-lg font-extrabold text-white">
-              📅 <span className="text-white">Event Date:</span> April 2025
-            </p>
-            <p className="text-lg font-extrabold text-white">
-              👥 <span className="text-[#1bde09]">Age Group:</span> 12 - 14 Years
-            </p>
-          </motion.div>
+          
 
           {/* Scholarship */}
           <motion.p

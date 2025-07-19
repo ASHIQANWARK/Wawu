@@ -1,5 +1,5 @@
 import React from "react";
-import heroBg from "../assets/images/hero3.jpg";
+import heroBg from "../assets/images2/w24.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ const Hero = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10 bg-opacity-50 backdrop-brightness-60"></div>
+      <div className="absolute inset-0 bg-black/70 bg-opacity-50 backdrop-brightness-60"></div>
 
       {/* Animated Content */}
       <motion.div
@@ -24,6 +24,18 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
+        {/* Top Title */}
+        <motion.h2
+          className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-widest text-[#108595] mb-4 itallic"
+          style={{ textShadow: "1px 1px 6px rgba(0, 0, 0, 0.6)" }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+        >
+          We Are With You (WAWU)
+        </motion.h2>
+
+        {/* Main Title */}
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-snug"
           style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.6)" }}
@@ -34,8 +46,9 @@ const Hero = () => {
           Empowering India's Football Stars of Tomorrow
         </motion.h1>
 
+        {/* Sub Text */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl mb-8 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl mb-8 leading-relaxed text-white"
           style={{ textShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

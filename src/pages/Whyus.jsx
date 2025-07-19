@@ -1,8 +1,8 @@
 import React from "react";
-import roleIMG from "../assets/images/rolemodel.jpg";
-import teamimage from "../assets/images/team.jpg";
-import potentialimg from "../assets/images/potential.jpg";
-import team2img from "../assets/images/team2img.jpg";
+import roleIMG from "../assets/images2/w84.jpg";
+import teamimage from "../assets/images2/w10.jpg";
+import potentialimg from "../assets/images2/w47.jpg";
+import team2img from "../assets/images2/w30.jpg";
 import { motion } from "framer-motion";
 
 // Animation Variants
@@ -58,7 +58,7 @@ const AboutSection = () => {
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900"
           variants={cardVariant}
         >
-          Why <span className="text-[#07293d]">WAWU Foundation?</span>
+          Why <span className="text-[#11698e]">WAWU Foundation?</span>
         </motion.h2>
 
         <motion.p
@@ -80,7 +80,7 @@ const AboutSection = () => {
           {cards.map(({ src, title, desc }) => (
             <motion.div
               key={title}
-              className="bg-[#07293d] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
+              className="bg-[#11698e] shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300"
               variants={cardVariant}
               whileHover={{ y: -8 }}
             >

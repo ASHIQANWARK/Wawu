@@ -26,7 +26,7 @@ const INLLBrochure = () => {
   return (
     <div className=" text-black">
       {/* Hero Section */}
-      <header className="relative bg-[#07293d] bg-cover bg-center h-auto flex flex-col items-center rounded-tr-full rounded-bl-full justify-between px-4 sm:px-8 py-8 sm:py-12 z-10">
+      <header className="relative bg-[#11698e] bg-cover bg-center h-auto flex flex-col items-center rounded-tr-full rounded-bl-full justify-between px-4 sm:px-8 py-8 sm:py-12 z-10">
         <div className="w-full max-w-screen-lg">
           {/* Content Block */}
           <div className="p-4 sm:p-8 rounded-lg text-center md:text-left">

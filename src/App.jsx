@@ -13,6 +13,7 @@ import Contacts from './pages/Contact';
 import Donate from './pages/Donate';
 import OfficeEvents from './pages/officeevents';
 import InllEvents from './pages/inllgallery';
+import Talent from './pages/Talent';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/officeevents" element={<OfficeEvents />} />
         <Route path="/inllevents" element={<InllEvents />} />
+        <Route path="/talent" element={<Talent />} />
+       
       </Routes>
       <Footer />
     </Router>

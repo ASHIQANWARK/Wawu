@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/images/WAWU.png";
-import { Menu, X } from "lucide-react";
+import logo from "../assets/images/wawu white.png";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,7 +20,6 @@ const Navbar = () => {
 
   const handleAboutClick = (e) => {
     e.preventDefault();
-
     if (location.pathname === "/") {
       const aboutSection = document.getElementById("about");
       if (aboutSection) {
@@ -34,33 +34,38 @@ const Navbar = () => {
         }
       }, 100);
     }
-
     setIsOpen(false);
   };
 
+  const services = [
+    { title: "Talent Identification", link: "/talent" },
+    { title: "Comprehensive Support", link: "/compsupport" },
+    { title: "Professional Training", link: "/pf" },
+    { title: "Mentorship and Guidance", link: "/mentor" },
+  ];
+
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "#about", onClick: handleAboutClick },
+    { name: "About", path: "/about", onClick: handleAboutClick },
     { name: "INLL", path: "/inll" },
-    // { name: "Support Us", path: "/support-us" },
-    // { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent-lg"}
+        isScrolled ? "bg-[#11698e] shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex justify-between items-center py-4">
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="WAWU Logo" className="h-10 w-auto" />
+            <img src={logo} alt="WAWU Logo" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex items-center space-x-6">
             {menuItems.map(({ name, path, onClick }) =>
               onClick ? (
                 <a
@@ -68,7 +73,7 @@ const Navbar = () => {
                   href={path}
                   onClick={onClick}
                   className={`font-extrabold ${
-                    isScrolled ? "text-[#11698E]" : "text-white"
+                    isScrolled ? "text-white" : "text-white"
                   } hover:text-[#0D5C75] transition duration-300`}
                 >
                   {name}
@@ -78,30 +83,46 @@ const Navbar = () => {
                   key={name}
                   to={path}
                   className={`font-extrabold ${
-                    isScrolled ? "text-[#11698E]" : "text-white"
+                    isScrolled ? "text-white" : "text-white"
                   } hover:text-[#0D5C75] transition duration-300`}
                 >
                   {name}
                 </Link>
               )
             )}
-          </div>
 
-          {/* Donate Button (Desktop) */}
-          <div className="hidden md:block">
-            <Link
-              to="/donate"
-              className={`px-5 py-2 ${
-                isScrolled ? "bg-[#11c120]" : "bg-white text-[#11698E]"
-              } rounded-lg font-bold hover:bg-[#0D5C75] hover:text-white transition duration-300`}
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
             >
-              Donate
-            </Link>
+              <button
+                className={`font-extrabold flex items-center ${
+                  isScrolled ? "text-white" : "text-white"
+                } hover:text-[#0D5C75] transition duration-300`}
+              >
+                Services <ChevronDown className="ml-1 w-4 h-4" />
+              </button>
+              {showDropdown && (
+                <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50">
+                  {services.map((item, i) => (
+                    <Link
+                      key={i}
+                      to={item.link}
+                      className="block px-4 py-2 text-[#11698E] hover:bg-gray-100"
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black"
+            className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -116,14 +137,13 @@ const Navbar = () => {
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={() => setIsOpen(false)}
           ></div>
-
           <div
             className={`fixed top-0 left-0 w-3/4 max-w-sm h-full bg-black shadow-lg z-50 p-6 transition-transform transform ${
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
             <button
-              className="absolute top-4 right-4 text-[#11698E]"
+              className="absolute top-4 right-4 text-white"
               onClick={() => setIsOpen(false)}
             >
               <X size={28} />
@@ -136,7 +156,7 @@ const Navbar = () => {
                     key={name}
                     href={path}
                     onClick={onClick}
-                    className="block px-4 py-2 rounded-md text-[#11698E] hover:text-[#0D5C75]"
+                    className="block px-4 py-2 rounded-md text-white hover:text-[#0D5C75]"
                   >
                     {name}
                   </a>
@@ -144,21 +164,26 @@ const Navbar = () => {
                   <Link
                     key={name}
                     to={path}
-                    className="block px-4 py-2 rounded-md text-[#11698E] hover:text-[#0D5C75]"
+                    className="block px-4 py-2 rounded-md text-white hover:text-[#0D5C75]"
                     onClick={() => setIsOpen(false)}
                   >
                     {name}
                   </Link>
                 )
               )}
-
-              <Link
-                to="/donate"
-                className="block bg-[#11698E] text-white rounded-lg py-3 text-center font-bold mt-6 hover:bg-[#0D5C75] transition duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Donate
-              </Link>
+              <div className="border-t border-gray-700 pt-4">
+                <p className="text-white font-semibold mb-2">Services</p>
+                {services.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.link}
+                    className="block px-4 py-2 text-white hover:text-[#0D5C75]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             </nav>
           </div>
         </>

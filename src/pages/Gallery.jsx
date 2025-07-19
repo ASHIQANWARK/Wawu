@@ -1,49 +1,45 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import officeBg from "../assets/images/WAWU DP1.jpg";
 import inllBg from "../assets/images/INLL DP.jpg";
 
 const Gallery = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-16 ">
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-[#061428] tracking-wide uppercase">
-        Our Events Gallery
-      </h2>
+    <section className="bg-white py-16 px-6 sm:px-10">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#061428] mb-4 uppercase tracking-wide">
+          Our Events Gallery
+        </h2>
+        <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+          A glimpse into our football development journey, showcasing powerful moments from training, tournaments, and community events organized by the <strong>WAWU Foundation</strong>.
+        </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
-        {/* Office Events Box */}
-        <div
-          onClick={() => navigate("/officeevents")}
-          className="relative h-80 rounded-2xl shadow-lg cursor-pointer overflow-hidden group"
-        >
+        {/* Events Box */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
           <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-            style={{ backgroundImage: `url(${officeBg})` }}
-          ></div>
-          <div className="absolute inset-0 bg-black/50"></div>
-          <h3 className="absolute inset-0 flex items-center justify-center text-3xl font-semibold text-white z-10">
-            Office Events
-          </h3>
-        </div>
+            onClick={() => navigate("/inllevents")}
+            className="relative h-72 rounded-2xl shadow-lg cursor-pointer overflow-hidden group transition-transform duration-300 hover:scale-105"
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => e.key === "Enter" && navigate("/inllevents")}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${inllBg})` }}
+            />
+            <div className="absolute inset-0 bg-black/50" />
+            <h3 className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-white z-10">
+              INLL Events
+            </h3>
+          </div>
 
-        {/* Inll Events Box */}
-        <div
-          onClick={() => navigate("/inllevents")}
-          className="relative h-80 rounded-2xl shadow-lg cursor-pointer overflow-hidden group"
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-            style={{ backgroundImage: `url(${inllBg})` }}
-          ></div>
-          <div className="absolute inset-0 bg-black/50"></div>
-          <h3 className="absolute inset-0 flex items-center justify-center text-3xl font-semibold text-white z-10">
-            Inll Events
-          </h3>
+          {/* Placeholder for future gallery cards */}
+          {/* You can copy and reuse the above div to add more event gallery items */}
+
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

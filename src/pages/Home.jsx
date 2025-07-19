@@ -19,8 +19,8 @@ const Home = () => {
 
       <About />
       <MissionVision />
-      <Events />
       <Whyus />
+      <Events />
       <Service />
       <Impact />
       <GetInvolved />
