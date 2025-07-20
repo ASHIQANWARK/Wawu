@@ -11,6 +11,8 @@ import Service from "../pages/Service";
 import Impact from "../pages/Impact";
 import GetInvolved from "./GetInvolved";
 import Gallery from "../pages/Gallery";
+import Testimonials from "./Testimonials";
+import Sponsors from "./Sponsers";
 
 const Home = () => {
   return (
@@ -23,8 +25,10 @@ const Home = () => {
       <Events />
       <Service />
       <Impact />
+      <Sponsors />
       <GetInvolved />
       <Gallery />
+      <Testimonials />
       <Team />
       
       <Chatbot />

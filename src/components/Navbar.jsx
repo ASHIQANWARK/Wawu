@@ -20,21 +20,17 @@ const Navbar = () => {
 
   const handleAboutClick = (e) => {
     e.preventDefault();
+    setIsOpen(false);
     if (location.pathname === "/") {
-      const aboutSection = document.getElementById("about");
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: "smooth" });
-      }
+      const section = document.getElementById("about");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate("/#about");
       setTimeout(() => {
-        const aboutSection = document.getElementById("about");
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+        const section = document.getElementById("about");
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     }
-    setIsOpen(false);
   };
 
   const services = [
@@ -48,33 +44,26 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about", onClick: handleAboutClick },
     { name: "INLL", path: "/inll" },
+    { name: "Donate", path: "/donate" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
-        isScrolled ? "bg-[#11698e] shadow-lg" : "bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${isScrolled ? "bg-[#11698e] shadow-lg" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="WAWU Logo" className="h-14 w-auto" />
+            <img src={logo} alt="Logo" className="h-14 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8 text-lg font-bold">
             {menuItems.map(({ name, path, onClick }) =>
               onClick ? (
                 <a
                   key={name}
                   href={path}
                   onClick={onClick}
-                  className={`font-extrabold ${
-                    isScrolled ? "text-white" : "text-white"
-                  } hover:text-[#0D5C75] transition duration-300`}
+                  className="text-white hover:text-[#0D5C75] transition"
                 >
                   {name}
                 </a>
@@ -82,35 +71,30 @@ const Navbar = () => {
                 <Link
                   key={name}
                   to={path}
-                  className={`font-extrabold ${
-                    isScrolled ? "text-white" : "text-white"
-                  } hover:text-[#0D5C75] transition duration-300`}
+                  className="text-white hover:text-[#0D5C75] transition"
                 >
                   {name}
                 </Link>
               )
             )}
 
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setShowDropdown(true)}
-              onMouseLeave={() => setShowDropdown(false)}
-            >
+            <div className="relative">
               <button
-                className={`font-extrabold flex items-center ${
-                  isScrolled ? "text-white" : "text-white"
-                } hover:text-[#0D5C75] transition duration-300`}
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="text-white flex items-center hover:text-[#0D5C75] transition"
               >
-                Services <ChevronDown className="ml-1 w-4 h-4" />
+                Services <ChevronDown className="ml-1 w-5 h-5" />
               </button>
               {showDropdown && (
-                <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-50">
+                <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl z-50">
                   {services.map((item, i) => (
                     <Link
                       key={i}
                       to={item.link}
-                      className="block px-4 py-2 text-[#11698E] hover:bg-gray-100"
+                      className="block px-4 py-3 text-[#11698E] hover:bg-gray-100 font-semibold"
+                      onClick={() => {
+                        setShowDropdown(false);
+                      }}
                     >
                       {item.title}
                     </Link>
@@ -120,35 +104,19 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
       {isOpen && (
         <>
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
-            onClick={() => setIsOpen(false)}
-          ></div>
-          <div
-            className={`fixed top-0 left-0 w-3/4 max-w-sm h-full bg-black shadow-lg z-50 p-6 transition-transform transform ${
-              isOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
-          >
-            <button
-              className="absolute top-4 right-4 text-white"
-              onClick={() => setIsOpen(false)}
-            >
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)}></div>
+          <div className="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-black z-50 p-6">
+            <button className="absolute top-4 right-4 text-white" onClick={() => setIsOpen(false)}>
               <X size={28} />
             </button>
-
             <nav className="mt-12 space-y-6 text-lg font-bold">
               {menuItems.map(({ name, path, onClick }) =>
                 onClick ? (

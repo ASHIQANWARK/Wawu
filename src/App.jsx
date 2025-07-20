@@ -14,6 +14,9 @@ import Donate from './pages/Donate';
 import OfficeEvents from './pages/officeevents';
 import InllEvents from './pages/inllgallery';
 import Talent from './pages/Talent';
+import CompSupport from './pages/CompSupport';
+import ProfessionalTraining from './pages/Pf';
+import Mentorship from './pages/Mentor';
 
 function App() {
   return (
@@ -32,7 +35,9 @@ function App() {
         <Route path="/officeevents" element={<OfficeEvents />} />
         <Route path="/inllevents" element={<InllEvents />} />
         <Route path="/talent" element={<Talent />} />
-       
+       <Route path="/compsupport" element={<CompSupport/>} />
+       <Route path="/pf" element={<ProfessionalTraining />} />
+       <Route path="/mentor" element={<Mentorship />} />
       </Routes>
       <Footer />
     </Router>

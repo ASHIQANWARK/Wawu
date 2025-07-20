@@ -31,14 +31,15 @@ const ImpactSection = () => {
 
   return (
     <section
-      className="relative bg-cover bg-center text-white py-20 overflow-hidden"
+      className="relative bg-cover bg-center text-white pt-20 sm:pt-28 md:pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden"
       style={{ backgroundImage: `url(${impactBg})` }}
     >
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 backdrop-blur-sm"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 backdrop-blur-sm z-0" />
 
-      <div className="relative max-w-5xl mx-auto text-center px-4">
-        {/* Title Animation */}
+      {/* Content */}
+      <div className="relative max-w-5xl mx-auto text-center px-4 z-10">
+        {/* Title */}
         <motion.h2
           className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#fb8005] via-white to-[#138808] bg-clip-text text-transparent animate-gradient"
           initial={{ opacity: 0, y: -40 }}
@@ -49,7 +50,7 @@ const ImpactSection = () => {
           Our Impact
         </motion.h2>
 
-        {/* Subheading Animation */}
+        {/* Subheading */}
         <motion.p
           className="mt-4 text-lg md:text-xl text-gray-200"
           initial={{ opacity: 0, y: 20 }}
@@ -60,9 +61,9 @@ const ImpactSection = () => {
           Since its inception, WAWU Foundation has:
         </motion.p>
 
-        {/* Cards Grid */}
+        {/* Cards */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -80,9 +81,9 @@ const ImpactSection = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Glow Elements */}
-      <div className="absolute -bottom-20 left-0 w-48 h-48 bg-[#fb8005] rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -top-20 right-0 w-48 h-48 bg-[#138808] rounded-full opacity-20 blur-3xl"></div>
+      {/* Glow Effects */}
+      <div className="absolute -bottom-20 left-0 w-48 h-48 bg-[#fb8005] rounded-full opacity-20 blur-3xl z-0"></div>
+      <div className="absolute -top-20 right-0 w-48 h-48 bg-[#138808] rounded-full opacity-20 blur-3xl z-0"></div>
     </section>
   );
 };

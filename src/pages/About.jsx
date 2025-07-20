@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -31,14 +31,27 @@ const About = () => {
 
     const message = `*WAWU Donation Form Submission*\n\nName: ${formData.name}\nEmail: ${formData.email}\nMobile: ${formData.mobile}\nDonation Amount: ₹${amount}`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/919999999999?text=${encodedMessage}`; // Replace with your WhatsApp number
+    const whatsappURL = `https://wa.me/919999999999?text=${encodedMessage}`;
     window.open(whatsappURL, "_blank");
   };
 
-  return (
-    <section className="px-4 sm:px-6 md:px-12 py-16 sm:py-20 bg-white text-black">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+  // Scroll into view if URL has #about
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#about") {
+      const section = document.getElementById("about");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
+  return (
+    <section
+      id="about"
+      className="px-4 sm:px-6 md:px-12 py-16 sm:py-20 bg-white text-black"
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Left: About Content */}
         <motion.div
           className="space-y-6"
@@ -51,16 +64,22 @@ const About = () => {
             About Us
           </h2>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed">
-            At <span className="font-semibold">WAWU Foundation</span>, we are shaping the future of football by identifying and nurturing the next generation of stars.
+            At <span className="font-semibold">WAWU Foundation</span>, we are
+            shaping the future of football by identifying and nurturing the next
+            generation of stars.
           </p>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed">
-            Our dedicated scouting team seeks out raw talent and provides life-changing opportunities through structured training and international exposure.
+            Our dedicated scouting team seeks out raw talent and provides
+            life-changing opportunities through structured training and
+            international exposure.
           </p>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed">
-            We also conduct grassroots tournaments, player development camps, and mentor programs across the country.
+            We also conduct grassroots tournaments, player development camps,
+            and mentor programs across the country.
           </p>
           <p className="text-base sm:text-lg md:text-xl font-semibold">
-            Join us in empowering future champions. Together, we can build a legacy of excellence.
+            Join us in empowering future champions. Together, we can build a
+            legacy of excellence.
           </p>
         </motion.div>
 
@@ -72,7 +91,9 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-center">Support the Cause</h3>
+          <h3 className="text-2xl font-bold mb-4 text-center">
+            Support the Cause
+          </h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -99,9 +120,10 @@ const About = () => {
               onChange={handleChange}
             />
 
-            {/* ➕ New paragraph inside the form */}
             <p className="text-sm text-gray-600 font-medium">
-              Your donation helps provide scholarships, gear, nutrition, and coaching to underprivileged young footballers. Every contribution counts in changing lives!
+              Your donation helps provide scholarships, gear, nutrition, and
+              coaching to underprivileged young footballers. Every contribution
+              counts in changing lives!
             </p>
 
             {/* Donation Options */}

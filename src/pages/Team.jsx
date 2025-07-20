@@ -7,7 +7,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
-import shafiImage from "../assets/images/IMG_3596.png";
+import shafiImage from "../assets/images/shafi.jpg";
 import ckImage from "../assets/images/WAWUP4.jpg";
 import sharathImage from "../assets/images/sharath.jpg";
 import shaleelaImage from "../assets/images/SHALEELA.jpg";
@@ -28,7 +28,7 @@ const Team = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-[#07293d] mb-12 flex justify-center items-center gap-2">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#061428] mb-4 uppercase tracking-wide">
           Our Team 
         </h2>
 
