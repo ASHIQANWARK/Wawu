@@ -35,7 +35,6 @@ const About = () => {
     window.open(whatsappURL, "_blank");
   };
 
-  // Scroll into view if URL has #about
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === "#about") {
@@ -49,12 +48,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="px-4 sm:px-6 md:px-12 py-16 sm:py-20 bg-white text-black"
+      className="px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20 bg-white text-black"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Left: About Content */}
         <motion.div
-          className="space-y-6"
+          className="space-y-5 sm:space-y-6"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -85,13 +84,13 @@ const About = () => {
 
         {/* Right: Donation Form */}
         <motion.div
-          className="border border-gray-300 rounded-xl p-6 shadow-lg bg-gray-50"
+          className="border border-gray-300 rounded-xl p-5 sm:p-6 md:p-8 shadow-lg bg-gray-50"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 text-center">
             Support the Cause
           </h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -100,7 +99,7 @@ const About = () => {
               name="name"
               placeholder="Your Full Name"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
               onChange={handleChange}
             />
             <input
@@ -108,7 +107,7 @@ const About = () => {
               name="email"
               placeholder="Email Address"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
               onChange={handleChange}
             />
             <input
@@ -116,25 +115,26 @@ const About = () => {
               name="mobile"
               placeholder="Mobile Number"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
               onChange={handleChange}
             />
 
-            <p className="text-sm text-gray-600 font-medium">
+            <p className="text-sm sm:text-base text-gray-600 font-medium">
               Your donation helps provide scholarships, gear, nutrition, and
               coaching to underprivileged young footballers. Every contribution
               counts in changing lives!
             </p>
 
-            {/* Donation Options */}
             <div>
-              <p className="font-semibold mb-2">Select Donation Amount:</p>
+              <p className="font-semibold mb-2 text-sm sm:text-base">
+                Select Donation Amount:
+              </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {donationOptions.map((amt) => (
                   <button
                     type="button"
                     key={amt}
-                    className={`px-3 py-2 border rounded-md text-sm ${
+                    className={`px-3 py-2 border rounded-md text-sm sm:text-base ${
                       formData.amount === amt
                         ? "bg-black text-white"
                         : "bg-white text-black"
@@ -153,7 +153,7 @@ const About = () => {
                 name="otherAmount"
                 placeholder="Enter Custom Amount"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md mt-2"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md mt-2 text-sm sm:text-base"
                 onChange={handleChange}
               />
             )}

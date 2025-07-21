@@ -18,6 +18,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
   const handleAboutClick = (e) => {
     e.preventDefault();
     setIsOpen(false);
@@ -49,14 +53,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${isScrolled ? "bg-[#11698e] shadow-lg" : "bg-transparent"}`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
+        isScrolled ? "bg-[#11698e] shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} alt="Logo" className="h-14 w-auto" />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8 text-lg font-bold">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-6 text-base font-bold">
             {menuItems.map(({ name, path, onClick }) =>
               onClick ? (
                 <a
@@ -81,20 +90,21 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="text-white flex items-center hover:text-[#0D5C75] transition"
+                className="text-white flex items-center hover:text-[#ffffff] transition"
               >
                 Services <ChevronDown className="ml-1 w-5 h-5" />
               </button>
               {showDropdown && (
-                <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl z-50">
+                <div
+                  className="absolute left-0 mt-2 w-56 bg-transparent rounded-lg shadow-xl z-50"
+                  onMouseLeave={() => setShowDropdown(false)}
+                >
                   {services.map((item, i) => (
                     <Link
                       key={i}
                       to={item.link}
-                      className="block px-4 py-3 text-[#11698E] hover:bg-gray-100 font-semibold"
-                      onClick={() => {
-                        setShowDropdown(false);
-                      }}
+                      className="block px-4 py-3 text-[#ffffff] hover:bg-gray-100 font-semibold"
+                      onClick={() => setShowDropdown(false)}
                     >
                       {item.title}
                     </Link>
@@ -104,16 +114,21 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Mobile Menu Icon */}
           <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <>
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)}></div>
-          <div className="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-black z-50 p-6">
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsOpen(false)}
+          ></div>
+          <div className="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-black z-50 p-6 overflow-y-auto">
             <button className="absolute top-4 right-4 text-white" onClick={() => setIsOpen(false)}>
               <X size={28} />
             </button>
@@ -139,6 +154,7 @@ const Navbar = () => {
                   </Link>
                 )
               )}
+
               <div className="border-t border-gray-700 pt-4">
                 <p className="text-white font-semibold mb-2">Services</p>
                 {services.map((item, i) => (

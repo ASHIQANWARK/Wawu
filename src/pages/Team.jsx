@@ -1,5 +1,4 @@
 import React from "react";
-import { User } from "lucide-react";
 import {
   FaInstagram,
   FaFacebook,
@@ -25,21 +24,24 @@ const team = [
 
 const Team = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#061428] mb-4 uppercase tracking-wide">
-          Our Team 
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center">
+          Our Team
         </h2>
+        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
+          Meet the passionate individuals driving our mission forward with leadership, vision, and dedication.
+        </p>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Grid */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {team.map((member, index) => (
             <div
               key={index}
-              className="bg-[#07293d] rounded-2xl shadow-lg overflow-hidden p-6 flex flex-col items-center transition-all hover:scale-105"
+              className="bg-[#07293d] rounded-2xl shadow-md overflow-hidden p-5 flex flex-col items-center hover:scale-105 transition-all"
             >
-              {/* Profile Image */}
+              {/* Image */}
               <div className="w-full aspect-[3/4] mb-4 rounded-md overflow-hidden">
                 <img
                   src={member.image}
@@ -51,14 +53,15 @@ const Team = () => {
                 />
               </div>
 
-              {/* Name & Role */}
+              {/* Info */}
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-                <p className="text-gray-300 mt-1 text-sm">{member.role}</p>
+                <h3 className="text-white text-lg sm:text-xl font-semibold">
+                  {member.name}
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">
+                  {member.role}
+                </p>
               </div>
-
-              {/* Social Icons */}
-             
             </div>
           ))}
         </div>

@@ -6,7 +6,7 @@ const ProfessionalTraining = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#004e92] to-[#000428] text-white py-20 px-6">
+      <section className="bg-[#11698e]  text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Professional Training
@@ -22,10 +22,6 @@ const ProfessionalTraining = () => {
         <div className="max-w-6xl mx-auto text-sm text-gray-700">
           <Link to="/" className="hover:underline text-[#004e92] font-medium">
             Home
-          </Link>{" "}
-          /{" "}
-          <Link to="/services" className="hover:underline text-[#004e92] font-medium">
-            Services
           </Link>{" "}
           / <span className="font-semibold">Professional Training</span>
         </div>

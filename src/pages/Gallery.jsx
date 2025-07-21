@@ -8,7 +8,7 @@ const Gallery = () => {
   return (
     <section className="bg-white py-16 px-6 sm:px-10">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#061428] mb-4 uppercase tracking-wide">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
           Our Events Gallery
         </h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">

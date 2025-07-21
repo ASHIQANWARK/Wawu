@@ -6,7 +6,7 @@ const CompSupport = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-[#005e63] text-white py-20 px-6">
+      <section className="bg-[#11698e] text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Comprehensive Support

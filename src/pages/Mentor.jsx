@@ -6,7 +6,7 @@ const Mentorship = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-20 px-6">
+      <section className="bg-[#11698e] text-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
             Mentorship & Guidance

@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // required for routing
+import { Link } from "react-router-dom";
 import talentImg from "../assets/images2/w81.jpg";
 import supportImg from "../assets/images2/w2.jpg";
 import trainingImg from "../assets/images2/w18.jpg";
 import mentorshipImg from "../assets/images2/w38.jpg";
 
-// Data with route paths
+// Data
 const services = [
   { title: "Talent Identification", image: talentImg, link: "/talent" },
   { title: "Comprehensive Support", image: supportImg, link: "/compsupport" },
@@ -35,10 +35,10 @@ const cardVariant = {
 
 const ServicesSection = () => {
   return (
-    <section className="min-h-screen p-8 bg-white">
+    <section className="bg-white pt-10 pb-6 px-4 sm:px-6 md:px-10">
       {/* Heading */}
       <motion.h2
-        className="text-5xl font-bold text-center text-[#11698e] mb-10"
+        className="text-3xl md:text-4xl font-bold text-center text-gray-900"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -47,9 +47,21 @@ const ServicesSection = () => {
         Our Services
       </motion.h2>
 
-      {/* Cards */}
+      {/* Subheading */}
+      <motion.p
+        className="mt-3 text-center text-gray-600 max-w-2xl mx-auto text-base sm:text-lg"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        We offer end-to-end support to help young talents realize their potential —
+        from discovery to development.
+      </motion.p>
+
+      {/* Cards Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto"
+        className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto"
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -58,17 +70,19 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <Link to={service.link} key={index}>
             <motion.div
-              className="relative rounded-2xl shadow-lg overflow-hidden group cursor-pointer"
+              className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
               variants={cardVariant}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.02 }}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out"
+                className="w-full h-64 sm:h-72 object-cover transform transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/20 bg-opacity-40 flex items-end p-4">
-                <h3 className="text-white text-lg font-semibold">{service.title}</h3>
+              <div className="absolute inset-0 bg-black/30 flex items-end p-4">
+                <h3 className="text-white text-lg font-semibold drop-shadow-md">
+                  {service.title}
+                </h3>
               </div>
             </motion.div>
           </Link>

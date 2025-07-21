@@ -15,7 +15,7 @@ const Sponsors = () => {
   return (
     <div className="bg-white py-14">
       <div className="text-center mb-10 px-4">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#061428] mb-4 uppercase tracking-wide">Our Sponsors</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center">Our Sponsors</h2>
         <p className="text-gray-700 mt-2 max-w-xl mx-auto">
           We proudly collaborate with organizations that believe in youth empowerment through football.
         </p>

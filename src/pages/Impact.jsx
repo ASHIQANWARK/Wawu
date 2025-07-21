@@ -31,7 +31,7 @@ const ImpactSection = () => {
 
   return (
     <section
-      className="relative bg-cover bg-center text-white pt-20 sm:pt-28 md:pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden"
+      className="relative bg-cover bg-center text-white pt-10 pb-10 overflow-hidden"
       style={{ backgroundImage: `url(${impactBg})` }}
     >
       {/* Overlay */}
