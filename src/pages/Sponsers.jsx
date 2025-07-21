@@ -2,13 +2,13 @@ import React from "react";
 
 // Import sponsor logos
 import sponsor1 from "../assets/images/iQue Logo.png";
-import sponsor2 from "../assets/images/iQue Logo.png";
-import sponsor3 from "../assets/images/iQue Logo.png";
+import sponsor2 from "../assets/images2/ofioh.png";
+
 
 const sponsors = [
   { id: 1, image: sponsor1, name: "Sponsor 1" },
   { id: 2, image: sponsor2, name: "Sponsor 2" },
-  { id: 3, image: sponsor3, name: "Sponsor 3" },
+  
 ];
 
 const Sponsors = () => {
