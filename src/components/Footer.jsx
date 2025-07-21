@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/wawu white.png";
 
 const fadeIn = {
@@ -24,7 +25,7 @@ const fadeIn = {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#07293d] text-white">
+    <footer className="bg-[#11698e] text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Logo */}
         <motion.div
@@ -37,11 +38,11 @@ const Footer = () => {
           <img
             src={Logo}
             alt="WAWU Logo"
-            className="w-32 h-auto object-contain"
+            className="w-42 h-auto object-contain"
           />
         </motion.div>
 
-        {/* Column 2: Quick Links */}
+        {/* Column 2: Navigation Links */}
         <motion.div
           className="text-center md:text-left"
           initial="hidden"
@@ -50,12 +51,32 @@ const Footer = () => {
           custom={0.2}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-          <p className="text-gray-300">
-            Address: Door No: 84, 3rd Cross Rd, KHB Block, Koramangala,
+          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/" className="hover:underline">Home</Link></li>
+            <li><Link to="/about" className="hover:underline">About</Link></li>
+            <li><Link to="/inll" className="hover:underline">INLL</Link></li>
+            <li><Link to="/services" className="hover:underline">Services</Link></li>
+            <li><Link to="/donate" className="hover:underline">Donate</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+          </ul>
+        </motion.div>
+
+        {/* Column 3: Address and Policies */}
+        <motion.div
+          className="text-center md:text-left"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          custom={0.3}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-lg font-semibold mb-3">Contact</h3>
+          <p className="text-gray-300 text-sm">
+            Door No: 84, 3rd Cross Rd, KHB Block, Koramangala,<br />
             Bengaluru, Karnataka 560095
           </p>
-          <p className="text-gray-300 mt-2">
+          <p className="mt-2 text-gray-300 text-sm">
             Email:{" "}
             <a
               href="mailto:info@wawu.foundation"
@@ -64,18 +85,18 @@ const Footer = () => {
               info@wawu.foundation
             </a>
           </p>
-          <p className="text-gray-300 mt-2">
-            <a href="/privacy-policy" className="text-[#ffab00] hover:underline">
+          <p className="mt-2 text-sm">
+            <Link to="/privacy-policy" className="text-[#ffab00] hover:underline">
               Privacy Policy
-            </a>{" "}
+            </Link>{" "}
             |{" "}
-            <a href="/help-centre" className="text-[#ffab00] hover:underline">
+            <Link to="/help-centre" className="text-[#ffab00] hover:underline">
               Help Centre
-            </a>
+            </Link>
           </p>
         </motion.div>
 
-        {/* Column 3: Social Media */}
+        {/* Column 4: Social Media + Map */}
         <motion.div
           className="flex flex-col items-center"
           initial="hidden"
@@ -84,15 +105,15 @@ const Footer = () => {
           custom={0.4}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-          <div className="flex space-x-6">
+          <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
+          <div className="flex space-x-5 mb-4">
             <a
               href="https://www.facebook.com/share/1FQUm5bant/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-500 transition"
             >
-              <FaFacebookF size={24} />
+              <FaFacebookF size={22} />
             </a>
             <a
               href="https://www.instagram.com/wawu_org?igsh=MXdvZG8xdGV5NzVvNw=="
@@ -100,42 +121,31 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-white hover:text-pink-500 transition"
             >
-              <FaInstagram size={24} />
+              <FaInstagram size={22} />
             </a>
             <a
-              href="https://www.linkedin.com/in/wawu-foundation?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/wawu-foundation?utm_source=share"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-700 transition"
             >
-              <FaLinkedin size={24} />
+              <FaLinkedin size={22} />
             </a>
             <a
-              href="https://x.com/Wawuorg?t=N0BvrzrULUw7KVHZuZ6_Hg&s=09"
+              href="https://x.com/Wawuorg"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400 transition"
             >
-              <FaX size={24} />
+              <FaX size={22} />
             </a>
           </div>
-        </motion.div>
-
-        {/* Column 4: Google Map */}
-        <motion.div
-          className="w-full flex justify-center md:justify-end"
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeIn}
-          custom={0.6}
-          viewport={{ once: true }}
-        >
           <iframe
             title="Google Maps"
             src="https://www.google.com/maps?q=Koramangala,Bengaluru&output=embed"
             width="100%"
-            height="180"
-            className="rounded-lg shadow-lg max-w-md"
+            height="160"
+            className="rounded-lg shadow-lg max-w-xs"
             style={{ border: 0 }}
             allowFullScreen
           ></iframe>
