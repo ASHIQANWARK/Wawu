@@ -26,7 +26,7 @@ const Hero = () => {
       >
         {/* Tagline */}
         <motion.h1
-          className="text-lg sm:text-xl md:text-4xl font-bold italic tracking-wide mb-4 text-[#00E0FF] drop-shadow-lg"
+          className="text-lg sm:text-xl md:text-4xl font-extrabold italic tracking-wide mb-4 text-[#ffffff] drop-shadow-lg"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import supportImg from "../assets/images/support.jpg";
+import supportImg from "../assets/images2/w10.jpg";
 
 const CompSupport = () => {
   return (
@@ -23,11 +23,7 @@ const CompSupport = () => {
         <div className="max-w-6xl mx-auto text-sm text-gray-700">
           <Link to="/" className="hover:underline text-[#005e63] font-medium">
             Home
-          </Link>{" "}
-          /{" "}
-          <Link to="/services" className="hover:underline text-[#005e63] font-medium">
-            Services
-          </Link>{" "}
+          </Link>
           / <span className="font-semibold">Comprehensive Support</span>
         </div>
       </div>

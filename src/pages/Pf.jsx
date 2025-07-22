@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import trainingImg from "../assets/images/training.jpg";
+import trainingImg from "../assets/images2/w8.jpg";
 
 const ProfessionalTraining = () => {
   return (

@@ -15,8 +15,8 @@ const sectionVariants = {
 const impactData = [
   { icon: <FaUserFriends />, label: "Youth Reached", count: 5000 },
   { icon: <FaFutbol />, label: "Talents Scouted", count: 200 },
-  { icon: <FaSchool />, label: "Scholarships Given", count: 50 },
-  { icon: <FaGlobeAsia />, label: "States Covered", count: 3 },
+  { icon: <FaSchool />, label: "Events Conducted", count: 50 },
+  { icon: <FaGlobeAsia />, label: "Districts Covered", count: 14 },
 ];
 
 const MissionVision = () => {
