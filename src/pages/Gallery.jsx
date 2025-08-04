@@ -9,7 +9,7 @@ const Gallery = () => {
     <section className="bg-white py-16 px-6 sm:px-10">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-center">
-          Our Events Gallery
+          Our Events 
         </h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
           A glimpse into our football development journey, showcasing powerful moments from training, tournaments, and community events organized by the <strong>WAWU Foundation</strong>.

@@ -1,7 +1,60 @@
+import React, { useState } from "react";
 import { FaUniversity, FaDonate, FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Donate = () => {
+  const [selectedAmount, setSelectedAmount] = useState(500); // default ₹500
+  const user = {
+    name: "Donor Name", // Replace with actual user input if needed
+    email: "donor@example.com",
+  };
+
+  const handlePayment = async () => {
+    const orderUrl = "http://localhost:5000/api/payment/create-order";
+
+    try {
+      const res = await fetch(orderUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: selectedAmount,
+          name: user.name,
+          email: user.email,
+        }),
+      });
+
+      const data = await res.json();
+
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY, // Razorpay key from Vite env
+        amount: data.amount,
+        currency: data.currency,
+        name: "WAWU Foundation",
+        description: "Donation",
+        image: "/logo192.png",
+        order_id: data.id,
+        handler: function (response) {
+          alert("Thank you for your donation!");
+          alert(`Payment ID: ${response.razorpay_payment_id}`);
+        },
+        prefill: {
+          name: user.name,
+          email: user.email,
+        },
+        theme: {
+          color: "#11c120",
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      console.error("Payment initiation failed", error);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -37,19 +90,27 @@ const Donate = () => {
         <div className="max-w-4xl mx-auto mb-12">
           <h2 className="text-2xl font-bold text-[#11698E] mb-4 text-center">Choose Your Impact</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-            {["₹500", "₹1000", "₹2500", "₹5000+"].map((amt, idx) => (
+            {[500, 1000, 2500, 5000].map((amt, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl border border-gray-200 shadow-md py-6 px-4 hover:shadow-lg transition"
+                onClick={() => setSelectedAmount(amt)}
+                className={`cursor-pointer rounded-xl border p-6 shadow-md transition hover:shadow-lg ${
+                  selectedAmount === amt ? "bg-emerald-100 border-emerald-500" : "bg-white"
+                }`}
               >
-                <p className="text-xl font-semibold text-[#11698E]">{amt}</p>
+                <p className="text-xl font-semibold text-[#11698E]">₹{amt}</p>
                 <p className="text-sm text-gray-500 mt-2">Suggested Amount</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-600 mt-4 text-sm">
-            * You may donate any amount via bank transfer. Every contribution helps.
-          </p>
+          <div className="text-center mt-6">
+            <button
+              onClick={handlePayment}
+              className="bg-[#11698E] hover:bg-[#0D5C75] text-white font-bold px-6 py-3 rounded-xl text-lg"
+            >
+              Donate ₹{selectedAmount}
+            </button>
+          </div>
         </div>
 
         {/* Bank Details */}

@@ -6,6 +6,7 @@ import { FaUserFriends, FaFutbol, FaSchool, FaGlobeAsia } from "react-icons/fa";
 
 import missionImg from "../assets/images2/w23.jpg";
 import visionImg from "../assets/images2/w67.jpg";
+import wawVideo from "../assets/videos/WAWU.mp4"; // video import
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -33,17 +34,15 @@ const MissionVision = () => {
           viewport={{ once: true }}
           variants={sectionVariants}
         >
-          <img
-            src={missionImg}
-            alt="Mission"
-            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-xl"
-          />
+          {/* Content Left */}
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#11698e] uppercase mb-4">
               Our Mission
             </h2>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              At <strong>WAWU Foundation</strong>, we are dedicated to uncovering and uplifting football talent across India. Our mission includes:
+              At <strong>WAWU Foundation</strong>, we are dedicated to
+              uncovering and uplifting football talent across India. Our mission
+              includes:
             </p>
             <ul className="list-disc ml-5 mt-4 space-y-2 text-gray-700 text-sm sm:text-base">
               <li>Identifying potential in rural and underserved areas</li>
@@ -52,8 +51,55 @@ const MissionVision = () => {
               <li>Guiding players toward professional football careers</li>
             </ul>
             <p className="mt-4 text-gray-700 text-sm sm:text-base">
-              We believe every child deserves a chance, no matter their background.
+              We believe every child deserves a chance, no matter their
+              background.
             </p>
+          </div>
+
+          {/* Image Right */}
+          <img
+            src={missionImg}
+            alt="Mission"
+            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-xl"
+          />
+        </motion.div>
+
+        {/* Video Section: Video Left, Content Right */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Video Left */}
+          <div className="bg-white rounded-xl shadow-lg p-3 w-full max-w-md mx-auto md:mx-0">
+            <div className="w-full h-[760px] overflow-hidden rounded-md">
+              <video
+                className="w-full h-full object-cover rounded-md"
+                src={wawVideo}
+                controls
+                autoPlay
+                playsInline
+              />
+            </div>
+          </div>
+
+          {/* Content Right */}
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#11698e] uppercase mb-4">
+              Transforming Lives Through Sport
+            </h2>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+              Our initiatives aren’t just about football — they're about 
+              opportunity, discipline, community, and dreams. This video showcases 
+              the real impact of our grassroots movement.
+            </p>
+            <ul className="list-disc ml-5 mt-4 space-y-2 text-gray-700 text-sm sm:text-base">
+              <li>Voices from the field</li>
+              <li>Inspiring journeys of change</li>
+              <li>Snapshots of dedication and training</li>
+            </ul>
           </div>
         </motion.div>
 
@@ -65,12 +111,15 @@ const MissionVision = () => {
           viewport={{ once: true }}
           variants={sectionVariants}
         >
-          <div className="order-last md:order-first">
+          {/* Content Left */}
+          <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#11698e] uppercase mb-4">
               Our Vision
             </h2>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              We envision a future where every aspiring footballer has the tools and guidance to reach global heights, irrespective of financial limitations.
+              We envision a future where every aspiring footballer has the tools
+              and guidance to reach global heights, irrespective of financial
+              limitations.
             </p>
             <ul className="list-disc ml-5 mt-4 space-y-2 text-gray-700 text-sm sm:text-base">
               <li>Creating a pan-India grassroots football network</li>
@@ -79,9 +128,12 @@ const MissionVision = () => {
               <li>Collaboration with schools and federations</li>
             </ul>
             <p className="mt-4 text-gray-700 text-sm sm:text-base">
-              At <strong>WAWU Foundation</strong>, football becomes a gateway to dignity, education, and hope.
+              At <strong>WAWU Foundation</strong>, football becomes a gateway to
+              dignity, education, and hope.
             </p>
           </div>
+
+          {/* Image Right */}
           <img
             src={visionImg}
             alt="Vision"
@@ -108,9 +160,21 @@ const MissionVision = () => {
               >
                 <div className="text-[#11698e] text-4xl mb-3">{item.icon}</div>
                 <div className="text-2xl sm:text-3xl font-bold text-gray-800">
-                  {inView ? <CountUp start={0} end={item.count} duration={2} separator="," /> : 0}+
+                  {inView ? (
+                    <CountUp
+                      start={0}
+                      end={item.count}
+                      duration={2}
+                      separator=","
+                    />
+                  ) : (
+                    0
+                  )}
+                  +
                 </div>
-                <p className="text-sm sm:text-base text-gray-600 mt-2">{item.label}</p>
+                <p className="text-sm sm:text-base text-gray-600 mt-2">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
