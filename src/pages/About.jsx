@@ -1,40 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import aboutImage from "../assets/images/Kerala Edition.png"; // <-- import your image
 
 const About = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    amount: "",
-    otherAmount: "",
-  });
-
-  const donationOptions = ["1500", "3000", "6000", "Other"];
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleAmountSelect = (amount) => {
-    setFormData({
-      ...formData,
-      amount,
-      otherAmount: amount === "Other" ? "" : "",
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const amount =
-      formData.amount === "Other" ? formData.otherAmount : formData.amount;
-
-    const message = `*WAWU Donation Form Submission*\n\nName: ${formData.name}\nEmail: ${formData.email}\nMobile: ${formData.mobile}\nDonation Amount: ₹${amount}`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/919999999999?text=${encodedMessage}`;
-    window.open(whatsappURL, "_blank");
-  };
-
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === "#about") {
@@ -82,89 +50,19 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Right: Donation Form */}
+        {/* Right: Image */}
         <motion.div
-          className="border border-gray-300 rounded-xl p-5 sm:p-6 md:p-8 shadow-lg bg-gray-50"
+          className="border border-gray-300 rounded-xl overflow-hidden shadow-lg bg-gray-50 flex items-center justify-center"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 text-center">
-            Support the Cause
-          </h3>
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Full Name"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
-              onChange={handleChange}
-            />
-            <input
-              type="tel"
-              name="mobile"
-              placeholder="Mobile Number"
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm sm:text-base"
-              onChange={handleChange}
-            />
-
-            <p className="text-sm sm:text-base text-gray-600 font-medium">
-              Your donation helps provide scholarships, gear, nutrition, and
-              coaching to underprivileged young footballers. Every contribution
-              counts in changing lives!
-            </p>
-
-            <div>
-              <p className="font-semibold mb-2 text-sm sm:text-base">
-                Select Donation Amount:
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {donationOptions.map((amt) => (
-                  <button
-                    type="button"
-                    key={amt}
-                    className={`px-3 py-2 border rounded-md text-sm sm:text-base ${
-                      formData.amount === amt
-                        ? "bg-black text-white"
-                        : "bg-white text-black"
-                    }`}
-                    onClick={() => handleAmountSelect(amt)}
-                  >
-                    ₹{amt}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {formData.amount === "Other" && (
-              <input
-                type="number"
-                name="otherAmount"
-                placeholder="Enter Custom Amount"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md mt-2 text-sm sm:text-base"
-                onChange={handleChange}
-              />
-            )}
-
-            <button
-              type="submit"
-              className="w-full bg-emerald-500 text-white py-2 rounded-md hover:bg-emerald-600 transition"
-            >
-              Donate
-            </button>
-          </form>
+          <img
+            src={aboutImage}
+            alt="WAWU Foundation"
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </div>
     </section>
