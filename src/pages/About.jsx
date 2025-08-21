@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import aboutImage from "../assets/images/Kerala Edition.png"; // <-- import your image
+import aboutImage from "../assets/images/nextlegend.png"; // <-- import your image
 
 const About = () => {
   useEffect(() => {
