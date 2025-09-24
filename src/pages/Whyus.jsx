@@ -20,7 +20,7 @@ const cardVariant = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-const AboutSection = () => {
+const whySection = () => {
   const cards = [
     {
       src: potentialimg,
@@ -101,4 +101,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default whySection;
