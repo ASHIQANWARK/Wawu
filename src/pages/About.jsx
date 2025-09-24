@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import aboutImage from "../assets/images/nextlegend.png"; // <-- import your image
+import aboutImage from "../assets/images/WAWU DP1.jpg"; // <-- import your image
 
 const About = () => {
   useEffect(() => {
@@ -61,7 +61,7 @@ const About = () => {
           <img
             src={aboutImage}
             alt="WAWU Foundation"
-            className="w-full h-full object-cover"
+            className="w-full h-450px object-cover"
           />
         </motion.div>
       </div>
