@@ -164,7 +164,7 @@ const Hero = () => {
                 >
                   <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">⚽</div>
                   <div className="text-white font-semibold text-sm sm:text-base lg:text-lg">Building Dreams</div>
-                  <div className="text-emerald-300 text-xs sm:text-sm">Since 2020</div>
+                
                 </motion.div>
               </div>
 
