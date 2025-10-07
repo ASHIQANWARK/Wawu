@@ -172,28 +172,7 @@ const Team = () => {
                     {member.name}
                   </h3>
                   
-                  {/* Special Badge for Founder/Co-Founder */}
-                  {(member.role === "Founder" || member.role === "Co-Founder") && (
-                    <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium mb-3 ${
-                      member.role === "Founder" 
-                        ? "bg-blue-100 text-blue-800" 
-                        : "bg-emerald-100 text-emerald-800"
-                    }`}>
-                      <div className={`w-2 h-2 rounded-full ${
-                        member.role === "Founder" ? "bg-blue-500" : "bg-emerald-500"
-                      }`}></div>
-                      {member.role}
-                    </div>
-                  )}
-
-                  {/* Contact Button */}
-                  <motion.button
-                    className="mt-auto w-full bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 py-3 rounded-xl font-medium hover:from-blue-50 hover:to-cyan-50 hover:text-blue-600 transition-all duration-300 border border-gray-200 group-hover:border-blue-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Connect
-                  </motion.button>
+                  
                 </div>
 
                 {/* Hover Effect Border */}
@@ -206,39 +185,7 @@ const Team = () => {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16 lg:mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 lg:p-12 border border-blue-100 max-w-4xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-              Join Our Mission
-            </h3>
-            <p className="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">
-              Ready to be part of something extraordinary? Connect with our team and discover how you can contribute to our vision.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Team
-              </motion.button>
-              <motion.button
-                className="border border-blue-600 text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Openings
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   );
