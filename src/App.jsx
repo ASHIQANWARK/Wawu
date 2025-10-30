@@ -11,7 +11,7 @@ import Events from './pages/Events';
 import Inll from './pages/Inll';
 import Contacts from './pages/Contact';
 import Donate from './pages/Donate';
-import OfficeEvents from './pages/officeevents';
+
 import InllEvents from './pages/inllgallery';
 import Talent from './pages/Talent';
 import CompSupport from './pages/CompSupport';
@@ -32,7 +32,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/donate" element={<Donate />} />
-        <Route path="/officeevents" element={<OfficeEvents />} />
+       
         <Route path="/inllevents" element={<InllEvents />} />
         <Route path="/talent" element={<Talent />} />
        <Route path="/compsupport" element={<CompSupport/>} />

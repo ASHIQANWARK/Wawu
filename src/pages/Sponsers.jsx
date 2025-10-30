@@ -5,6 +5,7 @@ import { FaHandshake } from "react-icons/fa";
 // Import sponsor logos
 import sponsor1 from "../assets/images/iQue Logo.png";
 import sponsor2 from "../assets/images2/ofioh.png";
+import sponsor3 from "../assets/images/decathlonlogo.png"; // Add Decathlon logo import
 
 const sponsors = [
   { 
@@ -20,6 +21,13 @@ const sponsors = [
     name: "Ofioh", 
     tier: "gold",
     description: "Community Development Partner"
+  },
+  { 
+    id: 3, 
+    image: sponsor3, 
+    name: "Decathlon", 
+    tier: "platinum", // or "gold" depending on their tier
+    description: "Sports Equipment Partner"
   },
 ];
 
@@ -153,7 +161,7 @@ const Sponsors = () => {
 
         {/* Sponsors Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
@@ -200,7 +208,7 @@ const Sponsors = () => {
                       <img
                         src={sponsor.image}
                         alt={sponsor.name}
-                        className="w-32 h-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                        className="w-32 h-32 object-contain  hover:grayscale-0 transition-all duration-300"
                       />
                     </motion.div>
                     
@@ -249,9 +257,6 @@ const Sponsors = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        
-         
       </div>
     </section>
   );

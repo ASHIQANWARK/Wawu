@@ -22,8 +22,8 @@ import {
 } from "react-icons/fa";
 import bannerImage from "../assets/images/INLL Logo.png";
 import wawuLogo from "../assets/images/wawu white.png";
-import whyINLLImage from "../assets/images/hero4.jpg";
-import highlightsImage from "../assets/images/hero5.jpg";
+import whyINLLImage from "../assets/images2/wawu 01.jpg";
+import highlightsImage from "../assets/images2/wawu 05.jpg";
 import supportImage from "../assets/images/INLL Logo.png";
 
 
@@ -68,10 +68,7 @@ const INLLBrochure = () => {
 
       {/* Hero Section */}
       <header className="relative bg-gradient-to-br from-[#11698e] via-[#0d5a7c] to-[#0a4a6b] min-h-screen flex items-center justify-center px-4 sm:px-8 py-20 overflow-hidden">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
-        </div>
+       
         
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -93,7 +90,7 @@ const INLLBrochure = () => {
               </motion.div>
 
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -121,14 +118,11 @@ const INLLBrochure = () => {
                     <motion.img
                       src={wawuLogo}
                       alt="WAWU Logo"
-                      className="h-20 sm:h-24 mt-2 mx-auto sm:mx-0 hover:scale-105 transition-transform duration-300"
+                      className="h-15 sm:h-15 mt-2 mx-auto sm:mx-0 hover:scale-105 transition-transform duration-300"
                       whileHover={{ scale: 1.05 }}
                     />
                   </div>
-                  <div className="h-12 w-px bg-white/30 hidden sm:block"></div>
-                  <p className="text-lg sm:text-xl font-semibold text-emerald-300">
-                    In association with Ofioh Sporty Private Limited
-                  </p>
+                  
                 </div>
               </motion.div>
 
@@ -175,16 +169,7 @@ const INLLBrochure = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
-          </div>
-        </motion.div>
+        
       </header>
 
       {/* Breadcrumb */}
