@@ -6,7 +6,7 @@ import { FaHandshake } from "react-icons/fa";
 import sponsor1 from "../assets/images/iQue Logo.png";
 import sponsor2 from "../assets/images2/ofioh.png";
 import sponsor3 from "../assets/images/decathlonlogo.png"; // Add Decathlon logo import
-
+import sponsor4 from "../assets/images/azzezia.jpg";
 const sponsors = [
   { 
     id: 1, 
@@ -28,6 +28,13 @@ const sponsors = [
     name: "Decathlon", 
     tier: "platinum", // or "gold" depending on their tier
     description: "Sports Equipment Partner"
+  },
+  { 
+    id: 4, 
+    image: sponsor4, 
+    name: "Azeezia Health City", 
+    tier: "gold", // or "gold" depending on their tier
+    description: "Health Equipment Partner"
   },
 ];
 

@@ -11,7 +11,7 @@ import Service from "../pages/Service";
 import Impact from "../pages/Impact";
 import GetInvolved from "./GetInvolved";
 import Gallery from "../pages/Gallery";
-import Testimonials from "./Testimonials";
+// import Testimonials from "./Testimonials";
 import Sponsors from "./Sponsers";
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
       <Sponsors />
       <GetInvolved />
       <Gallery />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Team />
       
       <Chatbot />

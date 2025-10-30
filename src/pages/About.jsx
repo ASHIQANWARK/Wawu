@@ -50,7 +50,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <span className="font-bold text-[#11698d]">WAWU Foundation</span> is a dedicated non-profit organization focused on the upliftment and empowerment of young, talented football players from underprivileged and marginalized backgrounds. Founded in 2017, our aim is to bridge the gap between raw talent and real opportunity, enabling aspiring athletes to overcome barriers and realize their full potential on and off the field.
+                <span className="font-bold text-[#11698d]">WAWU Foundation</span> is a dedicated non-profit organization focused on the upliftment and empowerment of young, talented football players from underprivileged and marginalized backgrounds. inception in 2017, our aim is to bridge the gap between raw talent and real opportunity, enabling aspiring athletes to overcome barriers and realize their full potential on and off the field.
               </motion.p>
 
               <motion.p
