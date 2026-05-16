@@ -6,25 +6,25 @@ import { motion, useInView, useMotionValue, useSpring, useTransform } from "fram
 import DonateImg from "../assets/images/Donate.jpg";
 import VolunteerImg from "../assets/images/Volunteer.jpg";
 
-// Enhanced animation variants
+// Enhanced animation variants - Smaller animations
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2
+      staggerChildren: 0.2,
+      delayChildren: 0.15
     }
   }
 };
 
 const titleVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: [0.25, 0.46, 0.45, 0.94]
     }
   }
@@ -33,24 +33,24 @@ const titleVariants = {
 const cardVariants = {
   hidden: { 
     opacity: 0, 
-    y: 60,
-    scale: 0.9
+    y: 40,
+    scale: 0.95
   },
   show: (idx) => ({
     opacity: 1,
     y: 0,
     scale: 1,
     transition: { 
-      duration: 0.8, 
+      duration: 0.6, 
       ease: [0.25, 0.46, 0.45, 0.94],
-      delay: idx * 0.2
+      delay: idx * 0.15
     }
   }),
   hover: {
-    y: -15,
-    scale: 1.02,
+    y: -8,
+    scale: 1.01,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
       ease: "easeOut"
     }
   }
@@ -65,12 +65,12 @@ const iconVariants = {
       type: "spring",
       stiffness: 200,
       damping: 15,
-      delay: 0.5
+      delay: 0.4
     }
   },
   hover: {
-    scale: 1.1,
-    rotate: 5,
+    scale: 1.05,
+    rotate: 3,
     transition: {
       type: "spring",
       stiffness: 400,
@@ -79,7 +79,7 @@ const iconVariants = {
   }
 };
 
-// Animated button component
+// Animated button component - Smaller
 const AnimatedButton = ({ children, bgColor, href, type, className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
   
@@ -124,16 +124,16 @@ const ButtonContent = ({ children, bgColor, isHovered }) => (
     />
     
     <motion.div
-      className="relative z-10 flex items-center justify-center gap-2 text-white py-3 px-8 rounded-xl font-semibold shadow-lg"
+      className="relative z-10 flex items-center justify-center gap-2 text-white py-2 px-5 rounded-lg font-semibold shadow-md text-sm"
       style={{ backgroundColor: bgColor }}
       whileTap={{ scale: 0.95 }}
     >
       {children}
       <motion.div
-        animate={{ x: isHovered ? 5 : 0 }}
+        animate={{ x: isHovered ? 3 : 0 }}
         transition={{ type: "spring", stiffness: 500, damping: 20 }}
       >
-        <FaArrowRight size={14} />
+        <FaArrowRight size={12} />
       </motion.div>
     </motion.div>
     
@@ -142,32 +142,32 @@ const ButtonContent = ({ children, bgColor, isHovered }) => (
       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 z-20"
       initial={{ x: "-100%" }}
       animate={{ x: isHovered ? "200%" : "-100%" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
     />
   </>
 );
 
-// Floating elements background
+// Floating elements background - Smaller and subtler
 const FloatingElements = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {[...Array(8)].map((_, i) => (
+    {[...Array(6)].map((_, i) => (
       <motion.div
         key={i}
-        className="absolute rounded-full opacity-10"
+        className="absolute rounded-full opacity-5"
         style={{
-          width: Math.random() * 80 + 20,
-          height: Math.random() * 80 + 20,
+          width: Math.random() * 50 + 15,
+          height: Math.random() * 50 + 15,
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
           backgroundColor: i % 2 === 0 ? "#07293d" : "#11c120",
         }}
         animate={{
-          y: [0, -20, 0],
-          x: [0, Math.random() * 20 - 10, 0],
+          y: [0, -15, 0],
+          x: [0, Math.random() * 15 - 7, 0],
           rotate: [0, 180, 360],
         }}
         transition={{
-          duration: 15 + Math.random() * 10,
+          duration: 12 + Math.random() * 8,
           repeat: Infinity,
           ease: "linear",
         }}
@@ -210,35 +210,35 @@ const GetInvolved = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden"
+      className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden"
     >
       {/* Background elements */}
       <FloatingElements />
       
       {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(7,41,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(7,41,61,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(7,41,61,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(7,41,61,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header - Smaller */}
         <motion.div
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-10 lg:mb-12"
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
           variants={containerVariants}
         >
           <motion.h2
             variants={titleVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-[#07293d] to-[#11698E] bg-clip-text text-transparent mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-[#07293d] to-[#11698E] bg-clip-text text-transparent mb-3"
           >
             Get Involved
           </motion.h2>
           
           <motion.p
             variants={titleVariants}
-            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             Make a lasting impact—support our journey or become a part of it. 
-            <span className="block text-[#11698E] font-medium mt-2">
+            <span className="block text-[#11698E] font-medium mt-1">
               Together we can create something extraordinary.
             </span>
           </motion.p>
@@ -246,7 +246,7 @@ const GetInvolved = () => {
 
         {/* Cards Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
@@ -259,8 +259,8 @@ const GetInvolved = () => {
               whileHover="hover"
               className="group relative"
             >
-              {/* Main Card */}
-              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100/80 backdrop-blur-sm">
+              {/* Main Card - Smaller */}
+              <div className="relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100/80 backdrop-blur-sm">
                 {/* Background Image with Gradient Overlay */}
                 <div className="absolute inset-0">
                   <img
@@ -268,38 +268,38 @@ const GetInvolved = () => {
                     alt={opt.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${opt.gradient} opacity-90 mix-blend-multiply`} />
-                  <div className="absolute inset-0 bg-black/10" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${opt.gradient} opacity-85 mix-blend-multiply`} />
+                  <div className="absolute inset-0 bg-black/5" />
                 </div>
                 
-                {/* Content */}
-                <div className="relative z-10 p-8 md:p-10 lg:p-12 min-h-[400px] flex flex-col justify-between">
+                {/* Content - Smaller padding */}
+                <div className="relative z-10 p-6 md:p-8 min-h-[320px] flex flex-col justify-between">
                   {/* Top Section */}
                   <div>
-                    {/* Icon with animated background */}
+                    {/* Icon with animated background - Smaller */}
                     <motion.div
                       variants={iconVariants}
-                      className="relative mb-6 inline-flex"
+                      className="relative mb-4 inline-flex"
                     >
-                      <div className="absolute inset-0 bg-white/20 rounded-2xl transform rotate-12" />
+                      <div className="absolute inset-0 bg-white/20 rounded-xl transform rotate-6" />
                       <motion.div 
-                        className="relative bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg"
-                        whileHover={{ scale: 1.05 }}
+                        className="relative bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-md"
+                        whileHover={{ scale: 1.03 }}
                       >
-                        <div className="text-3xl" style={{ color: opt.bg }}>
+                        <div className="text-2xl" style={{ color: opt.bg }}>
                           {opt.icon}
                         </div>
                       </motion.div>
                       
-                      {/* Floating decoration */}
+                      {/* Floating decoration - Smaller */}
                       <motion.div
-                        className="absolute -top-2 -right-2 text-2xl"
+                        className="absolute -top-1 -right-1 text-lg"
                         animate={{
-                          y: [0, -10, 0],
-                          rotate: [0, 10, -10, 0],
+                          y: [0, -8, 0],
+                          rotate: [0, 8, -8, 0],
                         }}
                         transition={{
-                          duration: 4,
+                          duration: 3.5,
                           repeat: Infinity,
                           ease: "easeInOut"
                         }}
@@ -308,33 +308,33 @@ const GetInvolved = () => {
                       </motion.div>
                     </motion.div>
 
-                    {/* Title */}
+                    {/* Title - Smaller */}
                     <motion.h3
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -15 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 + idx * 0.1 }}
-                      className="text-3xl md:text-4xl font-bold text-white mb-4"
+                      transition={{ delay: 0.5 + idx * 0.1 }}
+                      className="text-2xl md:text-3xl font-bold text-white mb-3"
                     >
                       {opt.title}
                     </motion.h3>
 
-                    {/* Text */}
+                    {/* Text - Smaller */}
                     <motion.p
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -15 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8 + idx * 0.1 }}
-                      className="text-lg text-white/90 leading-relaxed mb-6 font-light"
+                      transition={{ delay: 0.7 + idx * 0.1 }}
+                      className="text-sm text-white/90 leading-relaxed mb-4"
                     >
                       {opt.text}
                     </motion.p>
                   </div>
 
-                  {/* Button */}
+                  {/* Button - Smaller */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 + idx * 0.1 }}
-                    className="mt-4"
+                    transition={{ delay: 0.9 + idx * 0.1 }}
+                    className="mt-3"
                   >
                     <AnimatedButton
                       href={opt.link}
@@ -348,15 +348,15 @@ const GetInvolved = () => {
                 </div>
 
                 {/* Border glow effect on hover */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-white/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-white/10 to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating shadow effect */}
+              {/* Floating shadow effect - Subtler */}
               <motion.div
-                className="absolute inset-0 rounded-3xl bg-gray-200/50 blur-xl -z-10"
+                className="absolute inset-0 rounded-xl bg-gray-200/40 blur-md -z-10"
                 animate={{
-                  y: [0, 10, 0],
-                  opacity: [0.3, 0.6, 0.3],
+                  y: [0, 8, 0],
+                  opacity: [0.2, 0.4, 0.2],
                 }}
                 transition={{
                   duration: 3 + idx,
@@ -368,15 +368,15 @@ const GetInvolved = () => {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - Smaller */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-16 lg:mt-20"
+          className="text-center mt-12 lg:mt-16"
         >
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-sm">
             Have questions?{" "}
             <Link 
               to="/contact" 

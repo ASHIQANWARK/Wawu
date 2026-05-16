@@ -5,8 +5,9 @@ import { FaHandshake } from "react-icons/fa";
 // Import sponsor logos
 import sponsor1 from "../assets/images/iQue Logo.png";
 import sponsor2 from "../assets/images2/ofioh.png";
-import sponsor3 from "../assets/images/decathlonlogo.png"; // Add Decathlon logo import
+import sponsor3 from "../assets/images/decathlonlogo.png";
 import sponsor4 from "../assets/images/azzezia.jpg";
+
 const sponsors = [
   { 
     id: 1, 
@@ -26,14 +27,14 @@ const sponsors = [
     id: 3, 
     image: sponsor3, 
     name: "Decathlon", 
-    tier: "platinum", // or "gold" depending on their tier
+    tier: "platinum",
     description: "Sports Equipment Partner"
   },
   { 
     id: 4, 
     image: sponsor4, 
     name: "Azeezia Health City", 
-    tier: "gold", // or "gold" depending on their tier
+    tier: "gold",
     description: "Health Equipment Partner"
   },
 ];
@@ -48,19 +49,19 @@ const Sponsors = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        staggerChildren: 0.15,
+        delayChildren: 0.2
       }
     }
   };
 
   const titleVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
@@ -69,24 +70,24 @@ const Sponsors = () => {
   const sponsorCardVariants = {
     hidden: { 
       opacity: 0, 
-      scale: 0.8,
-      y: 40
+      scale: 0.9,
+      y: 20
     },
     show: (index) => ({
       opacity: 1,
       scale: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
-        delay: index * 0.15
+        delay: index * 0.1
       }
     }),
     hover: {
-      y: -10,
-      scale: 1.05,
+      y: -5,
+      scale: 1.02,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: "easeOut"
       }
     }
@@ -94,10 +95,10 @@ const Sponsors = () => {
 
   const floatingElementVariants = {
     float: {
-      y: [0, -20, 0],
-      rotate: [0, 5, -5, 0],
+      y: [0, -15, 0],
+      rotate: [0, 3, -3, 0],
       transition: {
-        duration: 6,
+        duration: 5,
         repeat: Infinity,
         ease: "easeInOut"
       }
@@ -107,68 +108,68 @@ const Sponsors = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 overflow-hidden"
+      className="relative py-12 lg:py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(7,41,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(7,41,61,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(7,41,61,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(7,41,61,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
-        {/* Floating Shapes */}
+        {/* Floating Shapes - Smaller */}
         <motion.div
           variants={floatingElementVariants}
           animate="float"
-          className="absolute top-20 left-10 w-6 h-6 bg-[#11c120]/20 rounded-full"
+          className="absolute top-20 left-10 w-4 h-4 bg-[#11c120]/15 rounded-full"
         />
         <motion.div
           variants={floatingElementVariants}
           animate="float"
           transition={{ delay: 1 }}
-          className="absolute top-40 right-20 w-8 h-8 bg-[#07293d]/20 rounded-lg"
+          className="absolute top-40 right-20 w-5 h-5 bg-[#07293d]/15 rounded-lg"
         />
         <motion.div
           variants={floatingElementVariants}
           animate="float"
           transition={{ delay: 2 }}
-          className="absolute bottom-32 left-20 w-10 h-10 bg-[#11698E]/20 rounded-full"
+          className="absolute bottom-20 left-20 w-6 h-6 bg-[#11698E]/15 rounded-full"
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header - Smaller */}
         <motion.div
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-10 lg:mb-12"
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
           variants={containerVariants}
         >
           <motion.div
             variants={titleVariants}
-            className="inline-flex items-center gap-3 mb-4 bg-gradient-to-r from-[#07293d] to-[#11698E] text-white px-6 py-2 rounded-full text-sm font-medium"
+            className="inline-flex items-center gap-2 mb-3 bg-gradient-to-r from-[#07293d] to-[#11698E] text-white px-4 py-1.5 rounded-full text-xs font-medium"
           >
-            <FaHandshake className="w-4 h-4" />
+            <FaHandshake className="w-3 h-3" />
             Strategic Partnerships
           </motion.div>
 
           <motion.h2
             variants={titleVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-[#07293d] to-[#11698E] bg-clip-text text-transparent mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-[#07293d] to-[#11698E] bg-clip-text text-transparent mb-3"
           >
             Our Valued Sponsors
           </motion.h2>
 
           <motion.p
             variants={titleVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             We proudly collaborate with visionary organizations that believe in youth empowerment 
             through football and community development.
           </motion.p>
         </motion.div>
 
-        {/* Sponsors Grid */}
+        {/* Sponsors Grid - Smaller Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
@@ -181,17 +182,17 @@ const Sponsors = () => {
               whileHover="hover"
               className="group relative"
             >
-              {/* Main Card */}
-              <div className="relative bg-white rounded-3xl shadow-xl border border-gray-100/80 backdrop-blur-sm overflow-hidden">
+              {/* Main Card - Smaller */}
+              <div className="relative bg-white rounded-xl shadow-md border border-gray-100/80 backdrop-blur-sm overflow-hidden">
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${
                   sponsor.tier === "platinum" 
                     ? "from-blue-50 to-cyan-50" 
                     : "from-amber-50 to-yellow-50"
-                } opacity-60`} />
+                } opacity-40`} />
                 
-                {/* Tier Badge */}
-                <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
+                {/* Tier Badge - Smaller */}
+                <div className={`absolute top-2 right-2 px-2 py-0.5 rounded-full text-xs font-semibold ${
                   sponsor.tier === "platinum" 
                     ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white" 
                     : "bg-gradient-to-r from-amber-500 to-yellow-500 text-white"
@@ -199,15 +200,15 @@ const Sponsors = () => {
                   {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)}
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-8 lg:p-10 flex flex-col items-center text-center">
-                  {/* Logo Container */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-white/80 rounded-2xl transform rotate-6 blur-sm" />
+                {/* Content - Smaller */}
+                <div className="relative z-10 p-5 flex flex-col items-center text-center">
+                  {/* Logo Container - Smaller */}
+                  <div className="relative mb-4">
+                    <div className="absolute inset-0 bg-white/80 rounded-xl transform rotate-3 blur-sm" />
                     <motion.div 
-                      className="relative bg-white p-6 rounded-2xl shadow-lg border border-gray-100"
+                      className="relative bg-white p-3 rounded-xl shadow-md border border-gray-100"
                       whileHover={{ 
-                        scale: 1.05,
+                        scale: 1.03,
                         rotate: 1,
                         transition: { duration: 0.2 }
                       }}
@@ -215,48 +216,48 @@ const Sponsors = () => {
                       <img
                         src={sponsor.image}
                         alt={sponsor.name}
-                        className="w-32 h-32 object-contain  hover:grayscale-0 transition-all duration-300"
+                        className="w-20 h-20 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                       />
                     </motion.div>
                     
                     {/* Hover Effect Ring */}
-                    <div className="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-[#11c120]/30 transition-all duration-300" />
+                    <div className="absolute inset-0 border border-transparent rounded-xl group-hover:border-[#11c120]/30 transition-all duration-300" />
                   </div>
 
-                  {/* Sponsor Info */}
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                  {/* Sponsor Info - Smaller */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">
                     {sponsor.name}
                   </h3>
                   
-                  <p className="text-gray-600 mb-4 font-medium">
+                  <p className="text-gray-600 text-xs mb-3">
                     {sponsor.description}
                   </p>
 
-                  {/* Tier Icon */}
-                  <div className={`p-3 rounded-full ${
+                  {/* Tier Icon - Smaller */}
+                  <div className={`p-2 rounded-full ${
                     sponsor.tier === "platinum" ? "bg-blue-100" : "bg-amber-100"
                   }`}>
                     {sponsor.tier === "platinum" ? (
-                      <Trophy className="w-6 h-6 text-blue-600" />
+                      <Trophy className="w-4 h-4 text-blue-600" />
                     ) : (
-                      <Star className="w-6 h-6 text-amber-600" />
+                      <Star className="w-4 h-4 text-amber-600" />
                     )}
                   </div>
                 </div>
 
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-white/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-white/20 to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating Shadow */}
+              {/* Floating Shadow - Subtle */}
               <motion.div
-                className="absolute inset-0 rounded-3xl bg-gray-200/40 blur-xl -z-10"
+                className="absolute inset-0 rounded-xl bg-gray-200/30 blur-md -z-10"
                 animate={{
-                  y: [0, 15, 0],
-                  opacity: [0.3, 0.6, 0.3],
+                  y: [0, 10, 0],
+                  opacity: [0.2, 0.4, 0.2],
                 }}
                 transition={{
-                  duration: 4 + index,
+                  duration: 3 + index,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}

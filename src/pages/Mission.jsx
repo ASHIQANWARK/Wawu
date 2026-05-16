@@ -20,72 +20,61 @@ const MissionVision = () => {
 
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-20">
+      <div className="max-w-6xl mx-auto space-y-16">
         {/* Mission Section */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {/* Content */}
-          <div className="space-y-6 order-2 lg:order-1">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-3 h-8 bg-emerald-500 rounded-full"></div>
-              <span className="text-emerald-600 font-semibold uppercase tracking-wide text-sm">Our Mission</span>
+          <div className="space-y-4 order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <div className="w-2 h-6 bg-emerald-500 rounded-full"></div>
+              <span className="text-emerald-600 font-semibold uppercase tracking-wide text-xs">Our Mission</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-              Empowering Young Football Talent Across India
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              Transforming Indian Football
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              At <span className="font-semibold text-emerald-600">WAWU Foundation</span>, we are dedicated to 
-              uncovering and uplifting football talent from every corner of the country.
+            <p className="text-base text-gray-700 leading-relaxed">
+              Our mission is to transform the landscape of football in India by building a structured, inclusive, and sustainable development system that nurtures talent at every level of the game.
             </p>
-            <ul className="space-y-3">
-              {[
-                "Identifying potential in rural and underserved areas",
-                "Providing full scholarships for training and gear",
-                "Mentorship from experienced coaches and leaders",
-                "Guiding players toward professional football careers"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-gray-600 italic border-l-4 border-emerald-500 pl-4 py-2">
-              We believe every child deserves a chance, no matter their background.
+            <p className="text-base text-gray-700 leading-relaxed">
+              We are committed to identifying and developing grassroots players, particularly from underserved communities, and providing them with access to high-quality training, mentorship, and competitive opportunities.
+            </p>
+            <p className="text-base text-gray-700 leading-relaxed">
+              Through our initiatives, we aim to create a strong foundation for long-term player development that aligns with global standards. We are dedicated to creating a holistic football ecosystem that not only develops skilled athletes but also fosters discipline, leadership, and social impact, ultimately contributing to the growth and global recognition of Indian football.
             </p>
           </div>
 
           {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative rounded-xl overflow-hidden shadow-xl w-80 sm:w-96">
               <img
                 src={missionImg}
                 alt="WAWU Foundation Mission"
-                className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                className="w-full h-56 sm:h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
         </motion.div>
 
-        {/* Video Section */}
+        {/* Video/Impact Section - SAME SIZE AS MISSION */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Video - Perfectly Fitted Small Container */}
-          <div className="relative">
-            <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video max-w-md mx-auto lg:mx-0">
+          {/* Video - SAME SIZE AS MISSION IMAGE */}
+          <div className="flex justify-center">
+            <div className="relative bg-black rounded-xl overflow-hidden shadow-xl w-80 sm:w-96 aspect-[4/3]">
               <video
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 src={wawVideo}
                 controls
                 muted
@@ -95,94 +84,64 @@ const MissionVision = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            {/* Video Label */}
-            <div className="text-center mt-4">
-              <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
-                Watch Our Story
-              </span>
-            </div>
           </div>
 
-          {/* Content */}
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-3 h-8 bg-blue-500 rounded-full"></div>
-              <span className="text-blue-600 font-semibold uppercase tracking-wide text-sm">Our Impact</span>
+          {/* Content - SAME STRUCTURE AS MISSION */}
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <div className="w-2 h-6 bg-blue-500 rounded-full"></div>
+              <span className="text-blue-600 font-semibold uppercase tracking-wide text-xs">Our Impact</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-              Transforming Lives Through Football
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              Making a Difference
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Our initiatives aren't just about football — they're about opportunity, 
-              discipline, community, and dreams. Watch how we're making a difference.
+            <p className="text-base text-gray-700 leading-relaxed">
+              Our initiatives aren't just about football — they're about opportunity, discipline, community, and dreams. Watch how we're making a difference across India.
             </p>
-            <ul className="space-y-3">
-              {[
-                "Real stories from the field and inspiring journeys",
-                "Comprehensive training and development programs",
-                "Community building through sports initiatives",
-                "Life skills and career guidance alongside football"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
-              <p className="text-blue-800 text-sm">
-                <strong>Featured:</strong> See our players in action and hear their inspiring stories of transformation.
-              </p>
-            </div>
+            <p className="text-base text-gray-700 leading-relaxed">
+              Through our comprehensive programs, we've been able to reach thousands of young athletes and provide them with the tools they need to succeed both on and off the field.
+            </p>
+            <p className="text-base text-gray-700 leading-relaxed">
+              From rural talent identification to professional mentorship, every step of our journey is focused on creating lasting change in communities across the nation.
+            </p>
           </div>
         </motion.div>
 
-        {/* Vision Section */}
+        {/* Vision Section - SAME SIZE AS MISSION */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {/* Content */}
-          <div className="space-y-6 order-2 lg:order-2">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-3 h-8 bg-purple-500 rounded-full"></div>
-              <span className="text-purple-600 font-semibold uppercase tracking-wide text-sm">Our Vision</span>
+          {/* Content - SAME STRUCTURE AS MISSION */}
+          <div className="space-y-4 order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <div className="w-2 h-6 bg-purple-500 rounded-full"></div>
+              <span className="text-purple-600 font-semibold uppercase tracking-wide text-xs">Our Vision</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-              Building India's Football Future
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              India's Football Future
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We envision a future where every aspiring footballer has the tools 
-              and guidance to reach global heights, irrespective of financial limitations.
+            <p className="text-base text-gray-700 leading-relaxed">
+              Our vision is to build a sustainable, inclusive, and world-class football ecosystem in India that transforms lives through the power of sport.
             </p>
-            <ul className="space-y-3">
-              {[
-                "Creating a pan-India grassroots football network",
-                "International exposure and career opportunities",
-                "Collaboration with schools and sports federations",
-                "Promoting sports as a powerful life path"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-gray-600 italic border-l-4 border-purple-500 pl-4 py-2">
-              At WAWU Foundation, football becomes a gateway to dignity, education, and hope.
+            <p className="text-base text-gray-700 leading-relaxed">
+              We aspire to identify and nurture talent from grassroots levels, especially from underserved and underrepresented communities, ensuring that no potential goes unnoticed or unsupported.
+            </p>
+            <p className="text-base text-gray-700 leading-relaxed">
+              Through structured training programs, professional mentorship, and access to quality infrastructure, we aim to create a clear and accessible pathway for aspiring footballers to reach their highest potential.
             </p>
           </div>
 
-          {/* Image */}
-          <div className="order-1 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          {/* Image - SAME SIZE AS MISSION IMAGE */}
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative rounded-xl overflow-hidden shadow-xl w-80 sm:w-96">
               <img
                 src={visionImg}
                 alt="WAWU Foundation Vision"
-                className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                className="w-full h-56 sm:h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
@@ -192,22 +151,22 @@ const MissionVision = () => {
         {/* Impact Statistics */}
         <motion.div
           ref={ref}
-          className="bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl p-8 sm:p-12 shadow-2xl"
+          className="bg-gradient-to-r from-emerald-500 to-blue-600 rounded-2xl p-6 sm:p-10 shadow-xl"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Our Impact in Numbers
             </h3>
-            <p className="text-emerald-100 text-lg max-w-2xl mx-auto">
+            <p className="text-emerald-100 text-base max-w-2xl mx-auto">
               Measurable differences we've made across communities in India
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {impactData.map((item, index) => (
               <motion.div
                 key={index}
@@ -216,11 +175,11 @@ const MissionVision = () => {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 group-hover:bg-white/20 transition-all duration-300 h-full flex flex-col justify-center">
-                  <div className="text-white mb-3 flex justify-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 group-hover:bg-white/20 transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="text-white mb-2 flex justify-center">
                     {item.icon}
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  <div className="text-xl sm:text-2xl font-bold text-white mb-1">
                     {inView ? (
                       <CountUp
                         start={0}
@@ -233,7 +192,7 @@ const MissionVision = () => {
                     )}
                     +
                   </div>
-                  <p className="text-emerald-100 text-xs sm:text-sm font-medium">
+                  <p className="text-emerald-100 text-xs font-medium">
                     {item.label}
                   </p>
                 </div>

@@ -62,8 +62,8 @@ const Contact = () => {
             {[
               {
                 icon: "fas fa-globe",
-                title: "Visit Us",
-                info: "www.wawu.foundation",
+                title: "Address",
+                info: "Startup Park, Sidharata Colony, Santhosapuram, Koramangala 2nd Block, Koramangala, Bengaluru, Karnataka 560068",
               },
               {
                 icon: "fas fa-phone-alt",
