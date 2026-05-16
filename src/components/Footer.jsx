@@ -160,7 +160,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="bg-[#07293d] py-4 text-center">
         <p className="text-gray-400 text-sm">
-          &copy; 2026 WAWU Foundation. All rights reserved.
+          &copy; 2026 WAWU.Foundation. All rights reserved.
         </p>
       </div>
     </footer>
