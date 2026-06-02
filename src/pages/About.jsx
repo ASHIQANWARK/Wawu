@@ -54,13 +54,7 @@ const About = () => {
             {/* Paragraphs */}
             <div className="space-y-6">
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Founded in 2017,{" "}
-                <span className="font-semibold text-[#11698d]">
-                  WAWU Foundation
-                </span>{" "}
-                is a purpose-driven non-profit organisation dedicated to
-                advancing Indian football by unlocking opportunities for
-                talented youth from underserved communities.
+                WAWU Foundation exists to redefine the future of Indian football by developing talent, strengthening the football ecosystem, and creating meaningful opportunities for young players to thrive.
               </p>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
