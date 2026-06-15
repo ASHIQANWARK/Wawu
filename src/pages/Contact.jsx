@@ -68,12 +68,12 @@ const Contact = () => {
               {
                 icon: "fas fa-phone-alt",
                 title: "Call Us",
-                info: "+91 9035140187",
+                info: "+91 9035755827",
               },
               {
                 icon: "fas fa-envelope-open-text",
                 title: "Email Us",
-                info: "Info@wawu.foundation",
+                info: "enq.wawufoundation@gmail.com",
               },
             ].map((item, i) => (
               <motion.div
